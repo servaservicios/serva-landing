@@ -19,6 +19,27 @@ export default function Hero() {
       className="min-h-svh bg-ink-950 relative overflow-hidden flex flex-col"
       aria-label="Inicio"
     >
+      {/* Background image */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "url('/images/hero-team.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
+        }}
+        aria-hidden
+      />
+
+      {/* Dark overlay — heavier on the left (text) side, lifts slightly toward the right */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(to right, oklch(9.4% 0.01 152 / 0.96) 0%, oklch(9.4% 0.01 152 / 0.88) 45%, oklch(9.4% 0.01 152 / 0.74) 100%)',
+        }}
+        aria-hidden
+      />
+
       {/* Dot grid */}
       <div className="absolute inset-0 hero-dot-grid pointer-events-none" aria-hidden />
 
