@@ -35,9 +35,9 @@ export default function Hero() {
         aria-hidden
       />
 
-      {/* Decorative team image — desktop only, right side, behind content */}
+      {/* Hero visual — large centered team image, behind all content */}
       <div
-        className="hidden lg:block absolute bottom-0 right-0 w-[560px] xl:w-[680px] pointer-events-none select-none"
+        className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
         style={{ zIndex: 5 }}
         aria-hidden
       >
@@ -45,13 +45,13 @@ export default function Hero() {
           src="/images/hero-team1.png"
           alt=""
           draggable={false}
-          className="w-full h-auto object-contain object-bottom"
+          className="w-[95%] max-w-[1200px] h-auto object-contain"
           style={{
-            opacity: 0.22,
+            opacity: 0.18,
             maskImage:
-              'linear-gradient(to right, transparent 0%, black 22%, black 78%, transparent 100%)',
+              'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
             WebkitMaskImage:
-              'linear-gradient(to right, transparent 0%, black 22%, black 78%, transparent 100%)',
+              'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
           }}
         />
       </div>
