@@ -1,7 +1,8 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import {
   Sparkles, Wind, Droplets, Bug, Wrench, Truck,
-  MessageCircle,
+  MessageCircle, ChevronDown,
 } from 'lucide-react'
 import { SERVICE_CATEGORIES, WHATSAPP_URL } from '../lib/constants'
 
@@ -17,16 +18,19 @@ const categoryIconMap: Record<string, React.ElementType> = {
 const ease = [0.25, 0.46, 0.45, 0.94] as const
 
 export default function Services() {
+  const [open, setOpen] = useState<string | null>(null)
+
   return (
-    <section id="servicios" className="bg-white py-24 lg:py-36" aria-label="Servicios">
+    <section id="servicios" className="bg-white py-20 lg:py-28" aria-label="Servicios">
       <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24">
-        {/* Header row */}
+
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.65, ease }}
-          className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14"
+          className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-10"
         >
           <div>
             <p className="text-brand font-extrabold text-xs tracking-[0.25em] uppercase mb-4">
@@ -51,61 +55,89 @@ export default function Services() {
           </a>
         </motion.div>
 
-        {/* Categories */}
-        <div className="flex flex-col gap-12">
-          {SERVICE_CATEGORIES.map((cat, catIndex) => {
+        {/* Accordion */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          variants={{ visible: { transition: { staggerChildren: 0.07 } } }}
+          className="flex flex-col border-t border-ink-100 divide-y divide-ink-100"
+        >
+          {SERVICE_CATEGORIES.map((cat) => {
             const CatIcon = categoryIconMap[cat.id] ?? Sparkles
+            const isOpen = open === cat.id
+
             return (
               <motion.div
                 key={cat.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.55, delay: catIndex * 0.04, ease }}
+                variants={{
+                  hidden: { opacity: 0, y: 14 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease } },
+                }}
               >
-                {/* Category header */}
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="w-7 h-7 rounded-lg bg-brand/10 flex items-center justify-center shrink-0">
-                    <CatIcon className="w-3.5 h-3.5 text-brand-dark" aria-hidden />
-                  </span>
-                  <h3 className="font-extrabold text-ink-700 text-sm tracking-wide uppercase">
-                    {cat.name}
-                  </h3>
-                </div>
-
-                {/* Services grid */}
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: '-40px' }}
-                  variants={{ visible: { transition: { staggerChildren: 0.04 } } }}
-                  className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5"
+                <button
+                  onClick={() => setOpen(isOpen ? null : cat.id)}
+                  className="w-full flex items-center gap-4 py-5 text-left group"
+                  aria-expanded={isOpen}
                 >
-                  {cat.services.map(service => (
+                  <span
+                    className={`shrink-0 w-9 h-9 rounded-xl flex items-center justify-center transition-colors duration-200
+                      ${isOpen ? 'bg-brand/15' : 'bg-ink-100 group-hover:bg-brand/10'}`}
+                  >
+                    <CatIcon
+                      className={`w-4 h-4 transition-colors duration-200
+                        ${isOpen ? 'text-brand-dark' : 'text-ink-500 group-hover:text-brand-dark'}`}
+                      aria-hidden
+                    />
+                  </span>
+
+                  <span
+                    className={`flex-1 font-extrabold text-base leading-snug transition-colors duration-200
+                      ${isOpen ? 'text-ink-900' : 'text-ink-700 group-hover:text-ink-900'}`}
+                  >
+                    {cat.name}
+                  </span>
+
+                  <span className="shrink-0 text-xs font-bold text-ink-400 tabular-nums hidden sm:block">
+                    {cat.services.length} servicios
+                  </span>
+
+                  <motion.span
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.28, ease }}
+                    className="shrink-0 text-brand"
+                  >
+                    <ChevronDown className="w-5 h-5" aria-hidden />
+                  </motion.span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
                     <motion.div
-                      key={service.id}
-                      variants={{
-                        hidden: { opacity: 0, y: 14 },
-                        visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease } },
-                      }}
-                      className="group flex items-center gap-3.5 border border-ink-100 rounded-2xl px-4 py-3.5 hover:border-brand/35 hover:bg-brand-subtle cursor-default transition-all duration-200"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.32, ease }}
+                      className="overflow-hidden"
                     >
-                      <span className="shrink-0 w-8 h-8 rounded-lg bg-ink-100 group-hover:bg-brand/15 flex items-center justify-center transition-colors duration-200">
-                        <CatIcon
-                          className="w-3.5 h-3.5 text-ink-500 group-hover:text-brand-dark transition-colors duration-200"
-                          aria-hidden
-                        />
-                      </span>
-                      <span className="font-bold text-sm text-ink-700 group-hover:text-ink-900 leading-tight transition-colors duration-200">
-                        {service.name}
-                      </span>
+                      <div className="flex flex-wrap gap-2 pb-5 pl-[52px]">
+                        {cat.services.map(service => (
+                          <span
+                            key={service.id}
+                            className="inline-flex items-center border border-ink-200 rounded-lg px-3 py-1.5 text-sm font-bold text-ink-600 hover:border-brand/40 hover:bg-brand-subtle hover:text-ink-900 transition-all duration-150 cursor-default"
+                          >
+                            {service.name}
+                          </span>
+                        ))}
+                      </div>
                     </motion.div>
-                  ))}
-                </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
             )
           })}
-        </div>
+        </motion.div>
+
       </div>
     </section>
   )
