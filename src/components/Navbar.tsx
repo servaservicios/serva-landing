@@ -27,9 +27,13 @@ export default function Navbar() {
       }`}
     >
       <nav className="flex items-center justify-between px-6 md:px-12 lg:px-20 h-16 max-w-[1440px] mx-auto">
-        <a href="/" className="flex items-center gap-2.5 group" aria-label="SERVA inicio">
-          <span className="w-2 h-2 rounded-full bg-brand transition-transform duration-200 group-hover:scale-125" aria-hidden />
-          <span className="font-black text-xl text-ink-50 tracking-tight leading-none">SERVA</span>
+        <a href="/" className="flex items-center group" aria-label="SERVA inicio">
+          <img
+            src="/images/Logo%20Verde.png"
+            alt="SERVA"
+            className="h-8 w-auto"
+            draggable={false}
+          />
         </a>
 
         <ul className="hidden md:flex items-center gap-8" role="list">

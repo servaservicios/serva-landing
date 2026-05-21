@@ -12,9 +12,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2.5 mb-5">
-              <span className="w-2 h-2 rounded-full bg-brand" aria-hidden />
-              <span className="font-black text-xl text-ink-50 tracking-tight">SERVA</span>
+            <div className="mb-5">
+              <img
+                src="/images/Logo%20Verde.png"
+                alt="SERVA"
+                className="h-9 w-auto"
+                draggable={false}
+              />
             </div>
             <p className="text-ink-500 text-sm leading-relaxed max-w-[220px] mb-6">
               Limpieza profesional y mantenimiento integral en Monterrey y Área Metropolitana.
