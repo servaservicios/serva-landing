@@ -19,27 +19,6 @@ export default function Hero() {
       className="min-h-svh bg-ink-950 relative overflow-hidden flex flex-col"
       aria-label="Inicio"
     >
-      {/* Background image */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: "url('/images/hero-team.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
-        }}
-        aria-hidden
-      />
-
-      {/* Dark overlay — heavier on the left (text) side, lifts slightly toward the right */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'linear-gradient(to right, oklch(9.4% 0.01 152 / 0.96) 0%, oklch(9.4% 0.01 152 / 0.88) 45%, oklch(9.4% 0.01 152 / 0.74) 100%)',
-        }}
-        aria-hidden
-      />
-
       {/* Dot grid */}
       <div className="absolute inset-0 hero-dot-grid pointer-events-none" aria-hidden />
 
@@ -55,6 +34,27 @@ export default function Hero() {
         }}
         aria-hidden
       />
+
+      {/* Decorative team image — desktop only, right side, behind content */}
+      <div
+        className="hidden lg:block absolute bottom-0 right-0 w-[560px] xl:w-[680px] pointer-events-none select-none"
+        style={{ zIndex: 5 }}
+        aria-hidden
+      >
+        <img
+          src="/images/hero-team1.png"
+          alt=""
+          draggable={false}
+          className="w-full h-auto object-contain object-bottom"
+          style={{
+            opacity: 0.22,
+            maskImage:
+              'linear-gradient(to right, transparent 0%, black 22%, black 78%, transparent 100%)',
+            WebkitMaskImage:
+              'linear-gradient(to right, transparent 0%, black 22%, black 78%, transparent 100%)',
+          }}
+        />
+      </div>
 
       {/* Main content */}
       <div className="relative z-10 flex-1 flex items-center">
