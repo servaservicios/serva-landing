@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion'
 import { MessageCircle, ChevronDown } from 'lucide-react'
-import { WHATSAPP_URL, SERVICES } from '../lib/constants'
+import { WHATSAPP_URL, SERVICE_CATEGORIES } from '../lib/constants'
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const
 
-const allServiceNames = SERVICES.map(s => s.name)
+const allServiceNames = SERVICE_CATEGORIES.map(c => c.name)
 
 const heroStats = [
-  { value: '500+', label: 'Proyectos completados', delay: 0.7 },
-  { value: '12', label: 'Servicios especializados', delay: 0.85 },
-  { value: '100%', label: 'Satisfacción garantizada', delay: 1.0 },
+  { value: '+2,000', label: 'Servicios completados', delay: 0.7 },
+  { value: '+60', label: 'Servicios especializados', delay: 0.85 },
+  { value: 'MTY', label: 'Monterrey y Área Metropolitana', delay: 1.0 },
 ]
 
 export default function Hero() {
@@ -94,7 +94,7 @@ export default function Hero() {
                   className="inline-flex items-center gap-2.5 bg-brand text-ink-950 font-extrabold text-base px-7 py-3.5 rounded-xl hover:bg-brand-dark transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
                 >
                   <MessageCircle className="w-5 h-5" aria-hidden />
-                  Solicitar cotización
+                  Cotizar por WhatsApp
                 </a>
 
                 <a

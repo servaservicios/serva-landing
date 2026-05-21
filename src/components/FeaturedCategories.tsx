@@ -11,7 +11,7 @@ const categories = [
     headline: 'Tu hogar, siempre en su mejor estado.',
     description:
       'Limpieza profunda, mantenimiento preventivo y servicios de hogar para casas, condominios y departamentos.',
-    services: ['Limpieza Profunda', 'Limpieza Residencial', 'Mantenimiento General', 'Plomería', 'Instalaciones'],
+    services: ['Limpieza Profunda', 'Limpieza General', 'Plomería', 'Fumigación', 'Mantenimiento General'],
     bg: 'bg-ink-900',
     accent: 'bg-brand',
     textAccent: 'text-brand',
@@ -25,7 +25,7 @@ const categories = [
     headline: 'Espacios limpios, equipos productivos.',
     description:
       'Soluciones de limpieza y mantenimiento para oficinas, locales, restaurantes, hoteles y centros comerciales.',
-    services: ['Limpieza Comercial', 'Limpieza de Fachadas', 'Fumigación', 'Aire Acondicionado', 'Mantenimiento'],
+    services: ['Limpieza de Ventanas y Fachadas', 'Limpieza de Pisos', 'Mantenimiento de AC', 'Fumigación', 'Mantenimiento General'],
     bg: 'bg-brand',
     accent: 'bg-ink-950',
     textAccent: 'text-ink-950',
@@ -39,7 +39,7 @@ const categories = [
     headline: 'Precisión para entornos exigentes.',
     description:
       'Limpieza industrial especializada, fumigación de gran escala y mantenimiento de instalaciones críticas.',
-    services: ['Limpieza Industrial', 'Post-Construcción', 'Fumigación Industrial', 'Mantenimiento General', 'Instalaciones'],
+    services: ['Limpieza Post-Construcción', 'Limpieza de Fosas Sépticas', 'Fumigación y Control de Plagas', 'Mantenimiento General', 'Instalaciones'],
     bg: 'bg-ink-950',
     accent: 'bg-brand',
     textAccent: 'text-brand',

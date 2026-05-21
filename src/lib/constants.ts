@@ -9,26 +9,83 @@ export const NAV_LINKS = [
   { label: 'Contacto', href: '#contacto' },
 ]
 
-export const SERVICES = [
-  { id: 'limpieza-profunda',       name: 'Limpieza Profunda',         category: 'cleaning' },
-  { id: 'post-construccion',       name: 'Post-Construcción',         category: 'cleaning' },
-  { id: 'residencial',             name: 'Limpieza Residencial',      category: 'cleaning' },
-  { id: 'comercial',               name: 'Limpieza Comercial',        category: 'cleaning' },
-  { id: 'industrial',              name: 'Limpieza Industrial',       category: 'cleaning' },
-  { id: 'fachadas',                name: 'Limpieza de Fachadas',      category: 'cleaning' },
-  { id: 'mantenimiento',           name: 'Mantenimiento General',     category: 'maintenance' },
-  { id: 'fumigacion',              name: 'Fumigación',                category: 'maintenance' },
-  { id: 'aire-acondicionado',      name: 'Aire Acondicionado',        category: 'maintenance' },
-  { id: 'plomeria',                name: 'Plomería',                  category: 'maintenance' },
-  { id: 'instalaciones',           name: 'Instalaciones',             category: 'maintenance' },
-  { id: 'home-business',           name: 'Home & Business Services',  category: 'integral' },
+export const SERVICE_CATEGORIES = [
+  {
+    id: 'limpieza',
+    name: 'Limpieza',
+    services: [
+      { id: 'limpieza-general',          name: 'Limpieza General (Personal Fijo)' },
+      { id: 'limpieza-ventanas',         name: 'Limpieza de Ventanas y Fachadas' },
+      { id: 'limpieza-muebles',          name: 'Limpieza de Muebles y Alfombras' },
+      { id: 'limpieza-pisos',            name: 'Limpieza de Pisos' },
+      { id: 'limpieza-post-construccion',name: 'Limpieza Post-Construcción' },
+      { id: 'limpieza-profunda',         name: 'Limpieza Profunda' },
+      { id: 'limpieza-fosas',            name: 'Limpieza de Fosas Sépticas y Cisternas' },
+      { id: 'limpieza-trampas',          name: 'Limpieza de Trampas de Grasa' },
+    ],
+  },
+  {
+    id: 'aire-acondicionado',
+    name: 'Sistema de Aire Acondicionado y Extracción',
+    services: [
+      { id: 'mantenimiento-ac',          name: 'Mantenimiento de AC Central y Minisplit' },
+      { id: 'limpieza-campanas',         name: 'Limpieza de Campanas y Ductos' },
+      { id: 'cambio-filtros',            name: 'Cambio de Filtros' },
+      { id: 'extractor-hongo',           name: 'Limpieza de Hongo Extractor' },
+    ],
+  },
+  {
+    id: 'plomeria',
+    name: 'Plomería',
+    services: [
+      { id: 'diagnosticos',              name: 'Diagnósticos' },
+      { id: 'fugas',                     name: 'Corrección de Fugas' },
+      { id: 'desazolves',                name: 'Desazolves' },
+      { id: 'llaves-valvulas',           name: 'Cambio de Llaves y Válvulas' },
+    ],
+  },
+  {
+    id: 'fumigacion',
+    name: 'Fumigación y Control de Plagas',
+    services: [
+      { id: 'insectos-rastreros',        name: 'Insectos Rastreros' },
+      { id: 'cucaracha-alemana',         name: 'Cucaracha Alemana' },
+      { id: 'termitas',                  name: 'Termitas' },
+      { id: 'roedores',                  name: 'Roedores' },
+    ],
+  },
+  {
+    id: 'instalaciones',
+    name: 'Instalaciones y Mantenimiento',
+    services: [
+      { id: 'mantenimiento-general',        name: 'Mantenimiento General (Personal Fijo)' },
+      { id: 'mantenimiento-refrigeradores', name: 'Mantenimiento de Refrigeradores y Congeladores' },
+      { id: 'herrajes',                     name: 'Reparación de Herrajes' },
+      { id: 'instalacion-tvs',              name: 'Instalación de TVs, Cuadros y Más' },
+      { id: 'armado-muebles',               name: 'Armado de Muebles' },
+      { id: 'reparaciones-generales',       name: 'Reparaciones Generales' },
+    ],
+  },
+  {
+    id: 'otros',
+    name: 'Otros Servicios',
+    services: [
+      { id: 'mudanzas',                  name: 'Mudanzas' },
+    ],
+  },
 ]
 
-export const STATS = [
-  { value: 500, suffix: '+', label: 'Proyectos completados' },
-  { value: 12,  suffix: '',  label: 'Servicios especializados' },
-  { value: 5,   suffix: '+', label: 'Años de experiencia' },
-  { value: 100, suffix: '%', label: 'Satisfacción garantizada' },
+export const SERVICES = SERVICE_CATEGORIES.flatMap(cat =>
+  cat.services.map(s => ({ ...s, category: cat.id }))
+)
+
+export const STATS: Array<
+  | { value: number; suffix: string; label: string; display?: never }
+  | { value?: never; suffix?: never; label: string; display: string }
+> = [
+  { value: 2000, suffix: '+', label: 'Servicios completados' },
+  { value: 60,   suffix: '+', label: 'Servicios especializados' },
+  { display: 'MTY+ZM', label: 'Atención en Monterrey y Área Metropolitana' },
 ]
 
 export const PROCESS_STEPS = [

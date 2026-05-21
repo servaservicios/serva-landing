@@ -1,10 +1,10 @@
-import { SERVICES, PHONE_DISPLAY, WHATSAPP_URL } from '../lib/constants'
+import { SERVICE_CATEGORIES, PHONE_DISPLAY, WHATSAPP_URL } from '../lib/constants'
 
 const year = new Date().getFullYear()
 
 export default function Footer() {
-  const cleaning = SERVICES.filter(s => s.category === 'cleaning')
-  const maintenance = SERVICES.filter(s => s.category !== 'cleaning')
+  const limpieza = SERVICE_CATEGORIES.find(c => c.id === 'limpieza')!
+  const otherCategories = SERVICE_CATEGORIES.filter(c => c.id !== 'limpieza')
 
   return (
     <footer className="bg-ink-950 border-t border-ink-800/60" aria-label="Pie de página">
@@ -29,13 +29,13 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Cleaning services */}
+          {/* Limpieza services */}
           <div>
             <p className="text-ink-600 font-extrabold text-xs tracking-widest uppercase mb-5">
               Limpieza
             </p>
             <ul className="flex flex-col gap-2.5" role="list">
-              {cleaning.map(s => (
+              {limpieza.services.map(s => (
                 <li key={s.id}>
                   <span className="text-ink-400 text-sm font-medium">{s.name}</span>
                 </li>
@@ -43,15 +43,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Maintenance services */}
+          {/* Other service categories */}
           <div>
             <p className="text-ink-600 font-extrabold text-xs tracking-widest uppercase mb-5">
-              Mantenimiento
+              Otros Servicios
             </p>
             <ul className="flex flex-col gap-2.5" role="list">
-              {maintenance.map(s => (
-                <li key={s.id}>
-                  <span className="text-ink-400 text-sm font-medium">{s.name}</span>
+              {otherCategories.map(cat => (
+                <li key={cat.id}>
+                  <span className="text-ink-400 text-sm font-medium">{cat.name}</span>
                 </li>
               ))}
             </ul>

@@ -21,7 +21,7 @@ const reasons = [
   },
   {
     icon: Layers,
-    title: 'Un proveedor, 12 servicios',
+    title: 'Un proveedor, +60 servicios',
     body: 'Limpieza, mantenimiento, fumigación, plomería y más. Todo bajo un solo punto de contacto.',
   },
 ]

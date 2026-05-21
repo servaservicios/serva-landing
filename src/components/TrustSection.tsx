@@ -61,7 +61,7 @@ export default function TrustSection() {
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
           variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16"
+          className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-16"
         >
           {STATS.map((stat, i) => (
             <motion.div
@@ -82,7 +82,11 @@ export default function TrustSection() {
                 }`}
                 style={{ fontSize: 'clamp(2.5rem, 4vw, 4.5rem)' }}
               >
-                <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                {stat.display != null ? (
+                  stat.display
+                ) : (
+                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                )}
               </p>
               <p className={`text-sm font-semibold ${i === 0 ? 'text-ink-400' : 'text-ink-500'}`}>
                 {stat.label}

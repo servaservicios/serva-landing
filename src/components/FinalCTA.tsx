@@ -86,7 +86,7 @@ export default function FinalCTA() {
               className="inline-flex items-center gap-3 bg-ink-950 text-ink-50 font-extrabold text-base px-8 py-4 rounded-xl hover:bg-ink-800 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink-50 focus-visible:ring-offset-2 focus-visible:ring-offset-brand"
             >
               <MessageCircle className="w-5 h-5" aria-hidden />
-              Solicitar cotización
+              Cotizar por WhatsApp
             </a>
 
             <a

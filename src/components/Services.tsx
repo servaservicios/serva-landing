@@ -1,24 +1,17 @@
 import { motion } from 'framer-motion'
 import {
-  Sparkles, HardHat, Home, Building2, Factory, Layers,
-  Wrench, Bug, Wind, Droplets, Zap, Star,
+  Sparkles, Wind, Droplets, Bug, Wrench, Truck,
+  MessageCircle,
 } from 'lucide-react'
-import { SERVICES, WHATSAPP_URL } from '../lib/constants'
-import { MessageCircle } from 'lucide-react'
+import { SERVICE_CATEGORIES, WHATSAPP_URL } from '../lib/constants'
 
-const iconMap: Record<string, React.ElementType> = {
-  'limpieza-profunda':   Sparkles,
-  'post-construccion':   HardHat,
-  'residencial':         Home,
-  'comercial':           Building2,
-  'industrial':          Factory,
-  'fachadas':            Layers,
-  'mantenimiento':       Wrench,
-  'fumigacion':          Bug,
-  'aire-acondicionado':  Wind,
-  'plomeria':            Droplets,
-  'instalaciones':       Zap,
-  'home-business':       Star,
+const categoryIconMap: Record<string, React.ElementType> = {
+  'limpieza':           Sparkles,
+  'aire-acondicionado': Wind,
+  'plomeria':           Droplets,
+  'fumigacion':         Bug,
+  'instalaciones':      Wrench,
+  'otros':              Truck,
 }
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const
@@ -54,42 +47,65 @@ export default function Services() {
             className="inline-flex items-center gap-2 shrink-0 bg-brand text-ink-950 font-extrabold text-sm px-6 py-3 rounded-xl hover:bg-brand-dark transition-colors duration-200"
           >
             <MessageCircle className="w-4 h-4" aria-hidden />
-            Cotizar servicio
+            Cotizar por WhatsApp
           </a>
         </motion.div>
 
-        {/* Grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-60px' }}
-          variants={{ visible: { transition: { staggerChildren: 0.045 } } }}
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5"
-        >
-          {SERVICES.map(service => {
-            const Icon = iconMap[service.id] ?? Sparkles
+        {/* Categories */}
+        <div className="flex flex-col gap-12">
+          {SERVICE_CATEGORIES.map((cat, catIndex) => {
+            const CatIcon = categoryIconMap[cat.id] ?? Sparkles
             return (
               <motion.div
-                key={service.id}
-                variants={{
-                  hidden: { opacity: 0, y: 18 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease } },
-                }}
-                className="group flex items-center gap-3.5 border border-ink-100 rounded-2xl px-4 py-3.5 hover:border-brand/35 hover:bg-brand-subtle cursor-default transition-all duration-200"
+                key={cat.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.55, delay: catIndex * 0.04, ease }}
               >
-                <span className="shrink-0 w-8 h-8 rounded-lg bg-ink-100 group-hover:bg-brand/15 flex items-center justify-center transition-colors duration-200">
-                  <Icon
-                    className="w-3.5 h-3.5 text-ink-500 group-hover:text-brand-dark transition-colors duration-200"
-                    aria-hidden
-                  />
-                </span>
-                <span className="font-bold text-sm text-ink-700 group-hover:text-ink-900 leading-tight transition-colors duration-200">
-                  {service.name}
-                </span>
+                {/* Category header */}
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-7 h-7 rounded-lg bg-brand/10 flex items-center justify-center shrink-0">
+                    <CatIcon className="w-3.5 h-3.5 text-brand-dark" aria-hidden />
+                  </span>
+                  <h3 className="font-extrabold text-ink-700 text-sm tracking-wide uppercase">
+                    {cat.name}
+                  </h3>
+                </div>
+
+                {/* Services grid */}
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: '-40px' }}
+                  variants={{ visible: { transition: { staggerChildren: 0.04 } } }}
+                  className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5"
+                >
+                  {cat.services.map(service => (
+                    <motion.div
+                      key={service.id}
+                      variants={{
+                        hidden: { opacity: 0, y: 14 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease } },
+                      }}
+                      className="group flex items-center gap-3.5 border border-ink-100 rounded-2xl px-4 py-3.5 hover:border-brand/35 hover:bg-brand-subtle cursor-default transition-all duration-200"
+                    >
+                      <span className="shrink-0 w-8 h-8 rounded-lg bg-ink-100 group-hover:bg-brand/15 flex items-center justify-center transition-colors duration-200">
+                        <CatIcon
+                          className="w-3.5 h-3.5 text-ink-500 group-hover:text-brand-dark transition-colors duration-200"
+                          aria-hidden
+                        />
+                      </span>
+                      <span className="font-bold text-sm text-ink-700 group-hover:text-ink-900 leading-tight transition-colors duration-200">
+                        {service.name}
+                      </span>
+                    </motion.div>
+                  ))}
+                </motion.div>
               </motion.div>
             )
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   )
