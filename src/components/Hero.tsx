@@ -57,7 +57,7 @@ export default function Hero() {
       />
 
       {/* Main content */}
-      <div className="flex-1 flex items-center">
+      <div className="relative z-10 flex-1 flex items-center">
         <div className="px-8 md:px-16 lg:px-24 pt-28 pb-8 lg:pt-0 lg:pb-0 max-w-[1440px] mx-auto w-full">
           <div className="lg:grid lg:grid-cols-[1fr_360px] lg:gap-16 xl:gap-24 lg:items-center">
 
@@ -179,7 +179,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
-        className="border-t border-ink-800/40 px-8 md:px-16 lg:px-24 py-5"
+        className="relative z-10 border-t border-ink-800/40 px-8 md:px-16 lg:px-24 py-5"
       >
         <div className="max-w-[1440px] mx-auto">
           <div className="flex flex-wrap gap-x-5 gap-y-2 items-center">
