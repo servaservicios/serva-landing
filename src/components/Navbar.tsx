@@ -31,7 +31,7 @@ export default function Navbar() {
           <img
             src="/images/Logo%20Verde.png"
             alt="SERVA"
-            className="h-10 w-auto"
+            className="h-20 w-auto"
             draggable={false}
           />
         </a>

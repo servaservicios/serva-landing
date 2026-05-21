@@ -16,7 +16,7 @@ export default function Footer() {
               <img
                 src="/images/Logo%20Verde.png"
                 alt="SERVA"
-                className="h-11 w-auto"
+                className="h-[88px] w-auto"
                 draggable={false}
               />
             </div>
