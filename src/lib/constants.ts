@@ -141,8 +141,8 @@ export const FAQS = [
 export const TESTIMONIALS = [
   {
     name: 'Ricardo Garza',
-    role: 'Director de Operaciones, Grupo Garza Ponce',
-    body: 'SERVA se encarga de nuestras instalaciones desde hace tres años. Puntualidad, calidad y cero complicaciones. Exactamente lo que una empresa necesita.',
+    role: 'Director de Operaciones',
+    body: 'SERVA se encarga de nuestras instalaciones desde hace un año. Puntualidad, calidad y cero complicaciones. Exactamente lo que necesitábamos.',
   },
   {
     name: 'Valeria Mendoza',
@@ -151,7 +151,7 @@ export const TESTIMONIALS = [
   },
   {
     name: 'Ing. Marco Torres',
-    role: 'Gerente de Planta, Industria NL',
+    role: 'Gerente de Planta',
     body: 'Para una planta industrial, necesitas proveedores que entiendan los estándares. SERVA los cumple. Profesionales, seguros y confiables.',
   },
 ]
