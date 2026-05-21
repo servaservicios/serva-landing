@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Nunito', sans-serif;
+
+  /* Brand */
+  --color-brand: oklch(73.5% 0.186 152);
+  --color-brand-dark: oklch(58% 0.17 152);
+  --color-brand-muted: oklch(85% 0.09 152);
+  --color-brand-subtle: oklch(96% 0.025 152);
+
+  /* Ink scale — near-black to near-white, all tinted toward green */
+  --color-ink-950: oklch(11% 0.010 152);
+  --color-ink-900: oklch(14% 0.012 152);
+  --color-ink-800: oklch(20% 0.015 152);
+  --color-ink-700: oklch(30% 0.018 152);
+  --color-ink-600: oklch(42% 0.013 152);
+  --color-ink-500: oklch(55% 0.010 152);
+  --color-ink-400: oklch(65% 0.008 152);
+  --color-ink-300: oklch(76% 0.007 152);
+  --color-ink-200: oklch(88% 0.005 152);
+  --color-ink-100: oklch(94% 0.004 152);
+  --color-ink-50:  oklch(98% 0.003 152);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: oklch(98% 0.003 152);
+  color: oklch(14% 0.012 152);
+  overflow-x: hidden;
+}
+
+/* Fluid type scale */
+:root {
+  --text-display: clamp(3.5rem, 7vw + 0.5rem, 8.5rem);
+  --text-h1: clamp(2.25rem, 4vw + 0.5rem, 5rem);
+  --text-h2: clamp(1.75rem, 2.5vw + 0.5rem, 3.25rem);
+  --text-h3: clamp(1.25rem, 1.5vw + 0.125rem, 1.875rem);
+}
+
+/* Dot grid pattern for hero */
+.hero-dot-grid {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    oklch(73.5% 0.186 152 / 0.10) 1px,
+    transparent 0
+  );
+  background-size: 28px 28px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
