@@ -63,7 +63,7 @@ export default function WhyServa() {
               Confianza que se gana con resultados.
             </h2>
             <p className="text-ink-500 text-sm max-w-xs leading-relaxed lg:text-right">
-              No somos el proveedor más barato. Somos el más confiable.
+              La tranquilidad de trabajar con un proveedor que responde.
             </p>
           </div>
         </motion.div>
