@@ -138,7 +138,12 @@ export const FAQS = [
   },
 ]
 
-export const TESTIMONIALS = [
+export const TESTIMONIALS: Array<{
+  name: string
+  role: string
+  avatar?: string
+  body: string
+}> = [
   {
     name: 'Ricardo Garza',
     role: 'Director de Operaciones',
@@ -156,5 +161,40 @@ export const TESTIMONIALS = [
     role: 'Gerente de Planta',
     avatar: '/images/Marco.png',
     body: 'Para una planta industrial, necesitas proveedores que entiendan los estándares. SERVA los cumple. Profesionales, seguros y confiables.',
+  },
+  {
+    name: 'Sofía Ramírez',
+    role: 'Coordinadora de Facilidades',
+    body: 'Llevamos 3 años con SERVA para la limpieza diaria de nuestras oficinas. El equipo es puntual, discreto y siempre deja todo impecable. No imagino trabajar con otro proveedor.',
+  },
+  {
+    name: 'Luis Herrera',
+    role: 'Arquitecto / Constructor',
+    body: 'Contratamos la limpieza post-construcción para un proyecto de 18 departamentos. SERVA llegó con el equipo completo y terminaron antes de lo esperado. Resultado inmaculado.',
+  },
+  {
+    name: 'Patricia Soto',
+    role: 'Administradora de Edificio',
+    body: 'Administro 4 propiedades y SERVA cubre todas. Tener un solo proveedor confiable para limpieza, plomería y mantenimiento simplifica todo enormemente.',
+  },
+  {
+    name: 'Eduardo Vega',
+    role: 'Dueño de Restaurante',
+    body: 'El servicio de limpieza de campanas y trampas de grasa es excelente. Certificados, puntuales y con toda la documentación que el municipio requiere.',
+  },
+  {
+    name: 'Dra. Alejandra Núñez',
+    role: 'Directora Médica',
+    body: 'Para una clínica, la fumigación no es opcional. SERVA usa productos certificados, coordinan fuera de horario para no interrumpir operaciones. Profesionalismo total.',
+  },
+  {
+    name: 'Fernanda Castro',
+    role: 'Gerente de Hotel',
+    body: 'Tenemos contrato de mantenimiento preventivo desde hace dos años. El aire acondicionado funciona sin fallas y los huéspedes nunca han reportado problemas.',
+  },
+  {
+    name: 'Carlos Morales',
+    role: 'Propietario / Inversor',
+    body: 'Lo que más valoro es la rapidez de respuesta por WhatsApp. Tuve una fuga en un inmueble rentado y en 2 horas ya tenían a alguien atendiendo. Eso es servicio real.',
   },
 ]

@@ -60,6 +60,15 @@ body {
   background-size: 28px 28px;
 }
 
+/* Hide scrollbar utility (for carousels) */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
