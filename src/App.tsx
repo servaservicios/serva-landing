@@ -18,9 +18,9 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <ClientLogos />
         <Services />
         <FeaturedCategories />
+        <ClientLogos />
         <WhyServa />
         <Industries />
         <Process />
