@@ -10,6 +10,14 @@ export default function FinalCTA() {
       className="bg-brand py-24 lg:py-36 relative overflow-hidden"
       aria-label="Solicitar servicio"
     >
+      {/* Team photo background */}
+      <img
+        src="/images/Equipo.png"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-[0.18] pointer-events-none"
+        aria-hidden
+      />
+
       {/* Subtle dot grid on green */}
       <div
         className="absolute inset-0 pointer-events-none"
