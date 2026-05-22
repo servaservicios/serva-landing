@@ -142,16 +142,19 @@ export const TESTIMONIALS = [
   {
     name: 'Ricardo Garza',
     role: 'Director de Operaciones',
+    avatar: '/images/Ricardo.png',
     body: 'SERVA se encarga de nuestras instalaciones desde hace un año. Puntualidad, calidad y cero complicaciones. Exactamente lo que necesitábamos.',
   },
   {
     name: 'Valeria Mendoza',
     role: 'Propietaria, Residencial en San Pedro',
+    avatar: '/images/Valeria.png',
     body: 'Contratamos el servicio de limpieza profunda y quedamos sorprendidos. El equipo llegó a tiempo, trabajó con orden y el resultado superó nuestras expectativas.',
   },
   {
     name: 'Ing. Marco Torres',
     role: 'Gerente de Planta',
+    avatar: '/images/Marco.png',
     body: 'Para una planta industrial, necesitas proveedores que entiendan los estándares. SERVA los cumple. Profesionales, seguros y confiables.',
   },
 ]

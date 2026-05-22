@@ -116,9 +116,18 @@ export default function TrustSection() {
               <p className="text-ink-600 text-sm leading-relaxed flex-1">
                 &ldquo;{t.body}&rdquo;
               </p>
-              <footer className="border-t border-ink-100 pt-5">
-                <p className="font-extrabold text-ink-900 text-sm">{t.name}</p>
-                <p className="text-ink-400 text-xs mt-1">{t.role}</p>
+              <footer className="border-t border-ink-100 pt-5 flex items-center gap-3">
+                <img
+                  src={t.avatar}
+                  alt={t.name}
+                  className="w-10 h-10 rounded-full object-cover object-top shrink-0"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div>
+                  <p className="font-extrabold text-ink-900 text-sm">{t.name}</p>
+                  <p className="text-ink-400 text-xs mt-0.5">{t.role}</p>
+                </div>
               </footer>
             </motion.blockquote>
           ))}
