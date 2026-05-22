@@ -7,6 +7,7 @@ const industries = [
     id: 'residencial',
     name: 'Residencial',
     image: '/images/Residencial.png',
+    imagePosition: 'center center',
     description: 'Casas, condominios, departamentos y desarrollos habitacionales.',
     services: ['Limpieza profunda', 'Mantenimiento', 'Plomería', 'Fumigación'],
   },
@@ -14,6 +15,7 @@ const industries = [
     id: 'comercial',
     name: 'Comercial',
     image: '/images/Comercial.png',
+    imagePosition: 'center center',
     description: 'Oficinas, locales, restaurantes, hoteles y centros comerciales.',
     services: ['Limpieza diaria', 'Fachadas', 'Aire Acondicionado', 'Mantenimiento'],
   },
@@ -21,6 +23,7 @@ const industries = [
     id: 'industrial',
     name: 'Industrial',
     image: '/images/Industrial.png',
+    imagePosition: 'center top',
     description: 'Plantas de manufactura, bodegas, centros de distribución.',
     services: ['Limpieza industrial', 'Post-construcción', 'Fumigación', 'Instalaciones'],
   },
@@ -28,6 +31,7 @@ const industries = [
     id: 'institucional',
     name: 'Institucional',
     image: '/images/Institucional.png',
+    imagePosition: 'center center',
     description: 'Escuelas, hospitales, clínicas, dependencias gubernamentales.',
     services: ['Limpieza especializada', 'Mantenimiento', 'Fumigación', 'Instalaciones'],
   },
@@ -75,11 +79,12 @@ export default function Industries() {
               className="group bg-white border border-ink-100 rounded-2xl overflow-hidden flex flex-col hover:border-brand/30 hover:shadow-md transition-all duration-300"
             >
               {/* Photo */}
-              <div className="overflow-hidden aspect-[4/3] shrink-0">
+              <div className="overflow-hidden h-52 shrink-0">
                 <img
                   src={ind.image}
                   alt={ind.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  style={{ objectPosition: ind.imagePosition }}
                   loading="lazy"
                   decoding="async"
                 />
