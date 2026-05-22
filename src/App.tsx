@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import ClientLogos from './components/ClientLogos'
 import Services from './components/Services'
 import FeaturedCategories from './components/FeaturedCategories'
 import WhyServa from './components/WhyServa'
@@ -17,6 +18,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <ClientLogos />
         <Services />
         <FeaturedCategories />
         <WhyServa />
