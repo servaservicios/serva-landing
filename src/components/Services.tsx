@@ -4,7 +4,12 @@ import {
   Sparkles, Wind, Droplets, Bug, Wrench, Truck,
   MessageCircle, ChevronDown,
 } from 'lucide-react'
-import { SERVICE_CATEGORIES, WHATSAPP_URL } from '../lib/constants'
+import { SERVICE_CATEGORIES, WHATSAPP_NUMBER, WHATSAPP_URL } from '../lib/constants'
+
+function serviceWhatsAppUrl(serviceName: string) {
+  const msg = `Hola, me interesa cotizar el servicio de ${serviceName}.`
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`
+}
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const
 
@@ -286,9 +291,13 @@ export default function Services() {
                             const hasImage = Boolean(svc.image)
 
                             return (
-                              <div
+                              <a
                                 key={service.id}
-                                className="group/card bg-white rounded-xl border border-ink-100 overflow-hidden flex flex-col cursor-default hover:-translate-y-0.5 hover:shadow-lg hover:shadow-ink-900/8 hover:border-ink-200 transition-all duration-200"
+                                href={serviceWhatsAppUrl(service.name)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`Cotizar ${service.name} por WhatsApp`}
+                                className="group/card bg-white rounded-xl border border-ink-100 overflow-hidden flex flex-col cursor-pointer hover:-translate-y-0.5 hover:shadow-lg hover:shadow-ink-900/8 hover:border-brand/30 transition-all duration-200"
                               >
                                 {/* Service image / placeholder */}
                                 <div
@@ -336,7 +345,7 @@ export default function Services() {
 
                                 {/* Service name + subtitle */}
                                 <div className="px-3.5 py-3 flex-1">
-                                  <p className="font-bold text-sm text-ink-900 leading-snug">
+                                  <p className="font-bold text-sm text-ink-900 leading-snug group-hover/card:text-ink-950 transition-colors duration-150">
                                     {service.name}
                                   </p>
                                   {svc.subtitle && (
@@ -345,7 +354,7 @@ export default function Services() {
                                     </p>
                                   )}
                                 </div>
-                              </div>
+                              </a>
                             )
                           })}
                         </div>
