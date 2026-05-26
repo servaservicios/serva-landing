@@ -1,5 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="8" fill="oklch(13% 0.012 152)"/>
-  <circle cx="8" cy="16" r="3" fill="oklch(73.5% 0.186 152)"/>
-  <text x="13" y="21" font-family="sans-serif" font-weight="900" font-size="13" fill="oklch(97% 0.004 152)">S</text>
+  <!-- White rounded background — matches brand surface in light & dark tabs -->
+  <rect width="32" height="32" rx="7.5" fill="#ffffff"/>
+  <!-- Serva green S — Nunito 900 approximated via system-ui for favicon context -->
+  <text
+    x="16" y="25"
+    font-family="'Nunito','Helvetica Neue',Arial,sans-serif"
+    font-weight="900"
+    font-size="26"
+    fill="#2ecc71"
+    text-anchor="middle"
+    dominant-baseline="auto"
+  >S</text>
 </svg>
