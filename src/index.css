@@ -60,6 +60,28 @@ body {
   background-size: 28px 28px;
 }
 
+/* Client logo infinite marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.logo-marquee {
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+.logo-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbar utility (for carousels) */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
