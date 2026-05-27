@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Sparkles, Wind, Droplets, Bug, Wrench, Truck,
@@ -137,6 +137,16 @@ const serviceConfigs: Record<string, ServiceConfig> = {
 // ─── Component ───────────────────────────────────────────────────────────────
 export default function Services() {
   const [open, setOpen] = useState<string | null>(null)
+
+  // Preload all service card images after first paint so accordion opens instantly
+  useEffect(() => {
+    Object.values(serviceConfigs)
+      .filter((svc): svc is ServiceConfig & { image: string } => Boolean(svc.image))
+      .forEach(({ image }) => {
+        const img = new window.Image()
+        img.src = image
+      })
+  }, [])
 
   return (
     <section id="servicios" className="bg-white py-20 lg:py-28" aria-label="Servicios">
