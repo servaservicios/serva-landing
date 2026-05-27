@@ -165,7 +165,7 @@ export const TESTIMONIALS: Array<{
   {
     name: 'Sofía Ramírez',
     role: 'Coordinadora de Facilidades',
-    body: 'Llevamos 3 años con SERVA para la limpieza diaria de nuestras oficinas. El equipo es puntual, discreto y siempre deja todo impecable. No imagino trabajar con otro proveedor.',
+    body: 'Llevamos 1 año con SERVA para la limpieza diaria de nuestras oficinas. El equipo es puntual, discreto y siempre deja todo impecable. No imagino trabajar con otro proveedor.',
   },
   {
     name: 'Luis Herrera',
