@@ -16,7 +16,7 @@ export default function Process() {
           className="mb-16 lg:mb-20"
         >
           <p className="text-brand font-extrabold text-xs tracking-[0.25em] uppercase mb-4">
-            05 — Proceso
+            06 — Proceso
           </p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
             <h2

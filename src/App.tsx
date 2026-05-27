@@ -21,8 +21,8 @@ export default function App() {
         <ClientLogos />
         <Industries />
         <WhyServa />
-        <Process />
         <TrustSection />
+        <Process />
         <FAQ />
         <FinalCTA />
       </main>
