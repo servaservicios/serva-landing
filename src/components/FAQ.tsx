@@ -9,7 +9,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section className="bg-ink-950 py-24 lg:py-36" aria-label="Preguntas frecuentes">
+    <section className="bg-white py-24 lg:py-36" aria-label="Preguntas frecuentes">
       <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24">
         <div className="lg:grid lg:grid-cols-[1fr_2fr] lg:gap-20 lg:items-start">
           {/* Left column */}
@@ -24,7 +24,7 @@ export default function FAQ() {
               07 — FAQ
             </p>
             <h2
-              className="font-black text-ink-50 leading-tight tracking-tight"
+              className="font-black text-ink-900 leading-tight tracking-tight"
               style={{ fontSize: 'var(--text-h2)' }}
             >
               Preguntas frecuentes.
@@ -40,7 +40,7 @@ export default function FAQ() {
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             variants={{ visible: { transition: { staggerChildren: 0.07 } } }}
-            className="flex flex-col divide-y divide-ink-800/60"
+            className="flex flex-col divide-y divide-ink-100"
           >
             {FAQS.map((faq, i) => (
               <motion.div
@@ -55,7 +55,7 @@ export default function FAQ() {
                   className="w-full flex items-start justify-between gap-4 py-6 text-left group"
                   aria-expanded={open === i}
                 >
-                  <span className="font-bold text-ink-100 text-base leading-snug group-hover:text-ink-50 transition-colors">
+                  <span className="font-bold text-ink-800 text-base leading-snug group-hover:text-ink-950 transition-colors">
                     {faq.q}
                   </span>
                   <span className="shrink-0 w-6 h-6 mt-0.5 text-brand">
@@ -75,7 +75,7 @@ export default function FAQ() {
                       transition={{ duration: 0.3, ease }}
                       className="overflow-hidden"
                     >
-                      <p className="text-ink-400 text-sm leading-relaxed pb-6">
+                      <p className="text-ink-600 text-sm leading-relaxed pb-6">
                         {faq.a}
                       </p>
                     </motion.div>

@@ -52,7 +52,7 @@ export default function Process() {
             >
               {/* Large background number */}
               <span
-                className="font-black text-ink-800/40 leading-none select-none absolute top-6 right-6 lg:top-8 lg:right-8"
+                className="font-black text-ink-800/60 leading-none select-none absolute top-6 right-6 lg:top-8 lg:right-8"
                 style={{ fontSize: 'clamp(4rem, 6vw, 7rem)' }}
                 aria-hidden
               >
@@ -60,7 +60,7 @@ export default function Process() {
               </span>
 
               {/* Foreground number badge */}
-              <div className="relative z-10 w-10 h-10 rounded-xl bg-ink-800 border border-ink-700/80 flex items-center justify-center shrink-0">
+              <div className="relative z-10 w-10 h-10 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center shrink-0">
                 <span className="font-black text-brand text-sm">{step.number}</span>
               </div>
 

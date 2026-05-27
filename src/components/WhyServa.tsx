@@ -89,7 +89,7 @@ export default function WhyServa() {
                   i % 2 === 1 ? 'sm:border-r-0 lg:border-r' : ''
                 } ${i >= 2 ? 'sm:border-b-0' : ''} ${
                   i === 3 ? 'lg:border-r-0' : ''
-                } last:border-0 hover:bg-ink-900/40 transition-colors duration-300`}
+                } last:border-0 hover:bg-brand/5 transition-colors duration-300`}
               >
                 <span className="w-12 h-12 rounded-xl bg-brand/10 border border-brand/15 flex items-center justify-center shrink-0">
                   <Icon className="w-5 h-5 text-brand" aria-hidden />

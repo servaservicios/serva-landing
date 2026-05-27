@@ -56,7 +56,7 @@ export default function FinalCTA() {
             }}
             className="text-ink-900/60 font-extrabold text-xs tracking-[0.25em] uppercase mb-7"
           >
-            09 — Acción
+            08 — Acción
           </motion.p>
 
           <motion.h2

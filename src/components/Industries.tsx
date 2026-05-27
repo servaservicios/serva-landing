@@ -105,9 +105,9 @@ export default function Industries() {
                   {ind.services.map(s => (
                     <li
                       key={s}
-                      className="text-ink-400 text-xs font-semibold flex items-center gap-2"
+                      className="text-ink-600 text-xs font-semibold flex items-center gap-2"
                     >
-                      <span className="w-1 h-1 rounded-full bg-brand shrink-0" aria-hidden />
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" aria-hidden />
                       {s}
                     </li>
                   ))}
