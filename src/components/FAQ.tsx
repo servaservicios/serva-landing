@@ -21,7 +21,7 @@ export default function FAQ() {
             className="mb-12 lg:mb-0 lg:sticky lg:top-28"
           >
             <p className="text-brand font-extrabold text-xs tracking-[0.25em] uppercase mb-4">
-              08 — FAQ
+              07 — FAQ
             </p>
             <h2
               className="font-black text-ink-50 leading-tight tracking-tight"

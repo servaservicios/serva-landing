@@ -103,7 +103,7 @@ export default function TrustSection() {
         >
           <div>
             <p className="text-brand font-extrabold text-xs tracking-[0.25em] uppercase mb-4">
-              07 — Confianza
+              06 — Confianza
             </p>
             <h2
               className="font-black text-ink-900 leading-tight tracking-tight max-w-lg"
