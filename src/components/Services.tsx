@@ -61,7 +61,7 @@ const configs: Record<string, CatConfig> = {
   'fumigacion': {
     Icon: Bug,
     tagline: 'Control certificado de plagas y vectores',
-    image: '/images/Institucional.png',
+    image: '/images/Insectos Rastreros.png',
     objectPosition: 'center center',
     gradient: 'linear-gradient(145deg, oklch(13% 0.012 100) 0%, oklch(24% 0.022 95) 100%)',
     dotColor: 'oklch(70% 0.14 100 / 0.12)',
