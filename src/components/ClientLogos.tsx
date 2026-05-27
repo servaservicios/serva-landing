@@ -72,7 +72,7 @@ export default function ClientLogos() {
 
   return (
     <section
-      className="relative bg-white border-y border-ink-100 py-12 overflow-hidden"
+      className="relative bg-brand-subtle border-y border-brand-muted/30 py-12 overflow-hidden"
       aria-label="Empresas que confían en SERVA"
     >
       {/* Ambient glow — very subtle brand tint behind the logos */}
@@ -112,13 +112,13 @@ export default function ClientLogos() {
         {/* Left fade */}
         <div
           className="pointer-events-none absolute inset-y-0 left-0 w-24 z-10"
-          style={{ background: 'linear-gradient(to right, white 0%, transparent 100%)' }}
+          style={{ background: 'linear-gradient(to right, oklch(96% 0.025 152) 0%, transparent 100%)' }}
           aria-hidden
         />
         {/* Right fade */}
         <div
           className="pointer-events-none absolute inset-y-0 right-0 w-24 z-10"
-          style={{ background: 'linear-gradient(to left, white 0%, transparent 100%)' }}
+          style={{ background: 'linear-gradient(to left, oklch(96% 0.025 152) 0%, transparent 100%)' }}
           aria-hidden
         />
 

@@ -152,7 +152,7 @@ export default function TrustSection() {
               className={`rounded-2xl p-8 lg:p-10 ${
                 i === 0
                   ? 'bg-ink-900 text-ink-50'
-                  : 'bg-white border border-ink-100'
+                  : 'bg-white border border-ink-200'
               }`}
             >
               <p

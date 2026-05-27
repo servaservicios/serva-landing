@@ -67,7 +67,7 @@ body {
 }
 .logo-marquee {
   width: max-content;
-  animation: marquee 40s linear infinite;
+  animation: marquee 32s linear infinite;
 }
 .logo-marquee:hover {
   animation-play-state: paused;
