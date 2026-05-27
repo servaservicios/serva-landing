@@ -41,7 +41,7 @@ const configs: Record<string, CatConfig> = {
   'aire-acondicionado': {
     Icon: Wind,
     tagline: 'Sistemas HVAC, campanas y ductos',
-    image: '/images/Comercial.png',
+    image: '/images/Mantenimiento de AC Central y Minisplit.png',
     objectPosition: 'center center',
     gradient: 'linear-gradient(145deg, oklch(12% 0.010 215) 0%, oklch(24% 0.018 215) 100%)',
     dotColor: 'oklch(65% 0.13 215 / 0.12)',
@@ -101,7 +101,7 @@ interface ServiceConfig {
 const serviceConfigs: Record<string, ServiceConfig> = {
   // Limpieza
   'limpieza-general':           { subtitle: 'Equipo dedicado en tus instalaciones', image: '/images/Limpieza General (Personal Fijo).png', objectPosition: 'center center' },
-  'limpieza-ventanas':          { subtitle: 'Interior, exterior y en altura' },
+  'limpieza-ventanas':          { subtitle: 'Interior, exterior y en altura', image: '/images/Comercial.png', objectPosition: 'center center' },
   'limpieza-muebles':           { subtitle: 'Tratamiento por tipo de material', image: '/images/Limpieza de Muebles y Alfombras.png', objectPosition: 'center center' },
   'limpieza-pisos':             { subtitle: 'Pulido, abrillantado y restauración', image: '/images/Limpieza de Pisos.png', objectPosition: 'center center' },
   'limpieza-post-construccion': { subtitle: 'Obra terminada, lista para usar', image: '/images/Limpieza Post-Construcción.png', objectPosition: 'center center' },
