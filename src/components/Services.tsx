@@ -31,7 +31,7 @@ const configs: Record<string, CatConfig> = {
   'limpieza': {
     Icon: Sparkles,
     tagline: 'Residencial, comercial e industrial',
-    image: '/images/Residencial.png',
+    image: '/images/PersonalLimpieza.png',
     objectPosition: 'center center',
     gradient: 'linear-gradient(145deg, oklch(13% 0.014 152) 0%, oklch(24% 0.024 152) 100%)',
     dotColor: 'oklch(73.5% 0.186 152 / 0.12)',
@@ -71,8 +71,8 @@ const configs: Record<string, CatConfig> = {
   'instalaciones': {
     Icon: Wrench,
     tagline: 'Reparaciones, instalaciones y soporte técnico',
-    image: '/images/Industrial.png',
-    objectPosition: 'center top',
+    image: '/images/PersonalMantenimiento.png',
+    objectPosition: 'center center',
     gradient: 'linear-gradient(145deg, oklch(13% 0.010 50) 0%, oklch(24% 0.018 48) 100%)',
     dotColor: 'oklch(72% 0.13 50 / 0.12)',
     childGradient: 'linear-gradient(145deg, oklch(97% 0.010 52) 0%, oklch(91% 0.022 48) 100%)',
@@ -100,7 +100,7 @@ interface ServiceConfig {
 
 const serviceConfigs: Record<string, ServiceConfig> = {
   // Limpieza
-  'limpieza-general':           { subtitle: 'Equipo dedicado en tus instalaciones', image: '/images/Limpieza General (Personal Fijo).png', objectPosition: 'center center' },
+  'limpieza-general':           { subtitle: 'Equipo dedicado en tus instalaciones', image: '/images/PersonalLimpieza.png', objectPosition: 'center center' },
   'limpieza-ventanas':          { subtitle: 'Interior, exterior y en altura', image: '/images/Comercial.png', objectPosition: 'center center' },
   'limpieza-muebles':           { subtitle: 'Tratamiento por tipo de material', image: '/images/Limpieza de Muebles y Alfombras.png', objectPosition: 'center center' },
   'limpieza-pisos':             { subtitle: 'Pulido, abrillantado y restauración', image: '/images/Limpieza de Pisos.png', objectPosition: 'center center' },
@@ -124,7 +124,7 @@ const serviceConfigs: Record<string, ServiceConfig> = {
   'termitas':                   { subtitle: 'Protección estructural completa', image: '/images/Termitas.png', objectPosition: 'center center' },
   'roedores':                   { subtitle: 'Barreras y trampas certificadas', image: '/images/Roedores.png', objectPosition: 'center center' },
   // Instalaciones
-  'mantenimiento-general':      { subtitle: 'Soporte técnico en sitio' },
+  'mantenimiento-general':      { subtitle: 'Soporte técnico en sitio', image: '/images/PersonalMantenimiento.png', objectPosition: 'center center' },
   'mantenimiento-refrigeradores': { subtitle: 'Temperatura y rendimiento óptimos', image: '/images/Mantenimiento de Refrigeradores y Congeladores.png', objectPosition: 'center center' },
   'herrajes':                   { subtitle: 'Puertas, ventanas y cerraduras', image: '/images/Reparación de Herrajes.png', objectPosition: 'center center' },
   'instalacion-tvs':            { subtitle: 'Montaje seguro y preciso', image: '/images/Instalación deTVs, Cuadros y Más.png', objectPosition: 'center center' },
