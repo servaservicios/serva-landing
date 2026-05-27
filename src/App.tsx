@@ -1,9 +1,9 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import ClientLogos from './components/ClientLogos'
 import Services from './components/Services'
-import FeaturedCategories from './components/FeaturedCategories'
-import WhyServa from './components/WhyServa'
 import Industries from './components/Industries'
+import WhyServa from './components/WhyServa'
 import Process from './components/Process'
 import TrustSection from './components/TrustSection'
 import FAQ from './components/FAQ'
@@ -18,9 +18,9 @@ export default function App() {
       <main>
         <Hero />
         <Services />
-        <FeaturedCategories />
-        <WhyServa />
+        <ClientLogos />
         <Industries />
+        <WhyServa />
         <Process />
         <TrustSection />
         <FAQ />
