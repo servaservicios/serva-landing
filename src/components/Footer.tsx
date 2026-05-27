@@ -87,7 +87,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://instagram.com/servaservicios"
+                  href="https://www.instagram.com/serva.servicios"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-ink-400 text-sm font-medium hover:text-ink-200 transition-colors"
