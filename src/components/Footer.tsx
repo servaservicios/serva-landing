@@ -106,6 +106,14 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a
+                  href="mailto:contacto@servaservicios.com"
+                  className="text-ink-400 text-sm font-medium hover:text-ink-200 transition-colors"
+                >
+                  contacto@servaservicios.com
+                </a>
+              </li>
+              <li>
                 <span className="text-ink-500 text-sm">
                   Monterrey y Área Metropolitana
                 </span>
