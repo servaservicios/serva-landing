@@ -35,24 +35,29 @@ export default function Hero() {
         aria-hidden
       />
 
-      {/* Hero visual — large centered team image, behind all content */}
+      {/* Hero background photo */}
       <div
-        className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
+        className="absolute inset-0 pointer-events-none select-none"
         style={{ zIndex: 5 }}
         aria-hidden
       >
         <img
-          src="/images/hero-team1.png"
+          src="/images/Personal.png"
           alt=""
           draggable={false}
-          className="w-[95%] max-w-[1200px] h-auto object-contain"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: 'center center' }}
+          loading="eager"
+          decoding="auto"
+        />
+        {/* Dark overlay — preserves text legibility and brand aesthetic */}
+        <div
+          className="absolute inset-0"
           style={{
-            opacity: 0.18,
-            maskImage:
-              'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
-            WebkitMaskImage:
-              'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+            background:
+              'linear-gradient(135deg, oklch(8% 0.012 152 / 0.84) 0%, oklch(8% 0.012 152 / 0.70) 100%)',
           }}
+          aria-hidden
         />
       </div>
 
