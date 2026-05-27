@@ -86,6 +86,26 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a
+                  href="https://instagram.com/servaservicios"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-ink-400 text-sm font-medium hover:text-ink-200 transition-colors"
+                >
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://linkedin.com/company/servaservicios"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-ink-400 text-sm font-medium hover:text-ink-200 transition-colors"
+                >
+                  LinkedIn
+                </a>
+              </li>
+              <li>
                 <span className="text-ink-500 text-sm">
                   Monterrey y Área Metropolitana
                 </span>
