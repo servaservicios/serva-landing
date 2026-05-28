@@ -22,7 +22,7 @@ const tickerCategories: Array<{ id: string; label: string; Icon: LucideIcon }> =
   { id: 'aire-acondicionado', label: 'Aire Acondicionado', Icon: Wind     },
   { id: 'plomeria',           label: 'Plomería',           Icon: Droplet  },
   { id: 'fumigacion',         label: 'Fumigación',         Icon: Bug      },
-  { id: 'instalaciones',      label: 'Instalaciones',      Icon: Wrench   },
+  { id: 'instalaciones',      label: 'Instalaciones y Mantenimiento', Icon: Wrench   },
   { id: 'otros',              label: 'Otros Servicios',    Icon: Layers   },
 ]
 

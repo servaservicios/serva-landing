@@ -9,7 +9,7 @@ const SERVICE_DROPDOWN = [
   { id: 'aire-acondicionado', label: 'Aire Acondicionado' },
   { id: 'plomeria',           label: 'Plomería' },
   { id: 'fumigacion',         label: 'Fumigación' },
-  { id: 'instalaciones',      label: 'Instalaciones' },
+  { id: 'instalaciones',      label: 'Instalaciones y Mantenimiento' },
   { id: 'otros',              label: 'Otros Servicios' },
 ]
 

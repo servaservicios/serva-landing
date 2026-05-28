@@ -25,7 +25,7 @@ const industries = [
     image: '/images/Industrial.png',
     imagePosition: 'center top',
     description: 'Plantas de manufactura, bodegas, centros de distribución.',
-    services: ['Limpieza industrial', 'Post-construcción', 'Fumigación', 'Instalaciones'],
+    services: ['Limpieza industrial', 'Post-construcción', 'Fumigación', 'Instalaciones y Mantenimiento'],
   },
   {
     id: 'institucional',
@@ -33,7 +33,7 @@ const industries = [
     image: '/images/Institucional.png',
     imagePosition: 'center center',
     description: 'Escuelas, hospitales, clínicas, dependencias gubernamentales.',
-    services: ['Limpieza especializada', 'Mantenimiento', 'Fumigación', 'Instalaciones'],
+    services: ['Limpieza especializada', 'Mantenimiento', 'Fumigación', 'Instalaciones y Mantenimiento'],
   },
 ]
 
