@@ -29,7 +29,6 @@ const reasons = [
 export default function WhyServa() {
   return (
     <section
-      id="contacto"
       className="bg-ink-950 py-24 lg:py-36 relative overflow-hidden"
       aria-label="Por qué elegir SERVA"
     >

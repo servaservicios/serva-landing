@@ -15,7 +15,7 @@ const catLink = 'text-ink-400 text-sm font-medium hover:text-ink-200 transition-
 
 export default function Footer() {
   return (
-    <footer className="bg-ink-950 border-t border-ink-800/60" aria-label="Pie de página">
+    <footer id="contacto" className="bg-ink-950 border-t border-ink-800/60" aria-label="Pie de página">
       <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12 mb-12">
 
