@@ -75,6 +75,17 @@ body {
   animation-play-state: paused;
 }
 
+/* Testimonial card marquee — slower than logos for readability */
+.testimonial-marquee {
+  width: max-content;
+  animation: marquee 70s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+.testimonial-marquee:hover {
+  animation-play-state: paused;
+}
+
 /* Hide scrollbar utility (for carousels) */
 .hide-scrollbar {
   scrollbar-width: none;
