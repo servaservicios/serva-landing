@@ -102,8 +102,8 @@ const serviceConfigs: Record<string, ServiceConfig> = {
   // Limpieza
   'limpieza-general':           { subtitle: 'Equipo dedicado en tus instalaciones', image: '/images/PersonalLimpieza.png', objectPosition: 'center center' },
   'limpieza-ventanas':          { subtitle: 'Interior, exterior y en altura', image: '/images/Comercial.png', objectPosition: 'center center' },
-  'limpieza-muebles':           { subtitle: 'Tratamiento por tipo de material', image: '/images/Limpieza de Muebles y Alfombras.png', objectPosition: 'center center' },
-  'limpieza-pisos':             { subtitle: 'Pulido, abrillantado y restauración', image: '/images/Limpieza de Pisos.png', objectPosition: 'center center' },
+  'limpieza-muebles':           { subtitle: 'Desinfección, antiácaros y sellado con teflón', image: '/images/Limpieza de Muebles y Alfombras.png', objectPosition: 'center center' },
+  'limpieza-pisos':             { subtitle: 'Pulido, abrillantado, sellado y restauración', image: '/images/Limpieza de Pisos.png', objectPosition: 'center center' },
   'limpieza-post-construccion': { subtitle: 'Obra terminada, lista para usar', image: '/images/Limpieza Post-Construcción.png', objectPosition: 'center center' },
   'limpieza-profunda':          { subtitle: 'Cada rincón, sin excepción', image: '/images/Limpieza Profunda.png', objectPosition: 'center center' },
   'limpieza-fosas':             { subtitle: 'Extracción y saneamiento', image: '/images/Limpieza de  Fosas Sépticas y Cisternas.png', objectPosition: 'center center' },
