@@ -66,21 +66,11 @@ export default function FinalCTA() {
               hidden: { opacity: 0, y: 28 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
             }}
-            className="font-black text-ink-950 leading-[0.92] tracking-tight mb-6 mx-auto"
+            className="font-black text-ink-950 leading-[0.92] tracking-tight mb-12 mx-auto"
             style={{ fontSize: 'var(--text-h1)', maxWidth: '820px' }}
           >
             ¿Listo para un espacio impecable?
           </motion.h2>
-
-          <motion.p
-            variants={{
-              hidden: { opacity: 0, y: 16 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
-            }}
-            className="text-ink-900/70 text-lg max-w-md mx-auto mb-12 leading-relaxed"
-          >
-            Cotización en menos de 2 horas. Servicio coordinado el mismo día.
-          </motion.p>
 
           <motion.div
             variants={{
