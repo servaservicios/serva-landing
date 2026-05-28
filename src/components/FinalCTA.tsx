@@ -7,8 +7,13 @@ const ease = [0.25, 0.46, 0.45, 0.94] as const
 export default function FinalCTA() {
   return (
     <section
-      className="bg-brand py-24 lg:py-36 relative overflow-hidden"
-      aria-label="Solicitar servicio"
+      className="bg-brand py-24 lg:py-36 relative overflow-hidden cursor-pointer group"
+      aria-label="Solicitar servicio — clic para cotizar por WhatsApp"
+      onClick={(e) => {
+        // Let existing <a> tags handle their own navigation
+        if ((e.target as HTMLElement).closest('a')) return
+        window.open(WHATSAPP_URL, '_blank', 'noopener,noreferrer')
+      }}
     >
       {/* Team photo background */}
       <img
@@ -43,6 +48,12 @@ export default function FinalCTA() {
           SERVA
         </span>
       </div>
+
+      {/* Hover feedback — barely perceptible dark wash on the green */}
+      <div
+        className="absolute inset-0 bg-ink-950/0 group-hover:bg-ink-950/[0.05] transition-colors duration-300 pointer-events-none"
+        aria-hidden
+      />
 
       <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 relative text-center">
         <motion.div
