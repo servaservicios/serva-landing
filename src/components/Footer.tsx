@@ -139,6 +139,8 @@ export default function Footer() {
         <div className="border-t border-ink-800/50 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <p className="text-ink-700 text-xs">
             © {year} SERVA. Todos los derechos reservados.
+            <br />
+            Alianza de Crecimiento Empresarial, S.A. de C.V.
           </p>
           <p className="text-ink-700 text-xs">
             Monterrey, Nuevo León · México
