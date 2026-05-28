@@ -132,10 +132,10 @@ export default function Hero() {
 
                 <a
                   href="#servicios"
-                  className="inline-flex items-center gap-2 text-ink-300 font-semibold text-sm hover:text-ink-50 transition-colors duration-150"
+                  className="group inline-flex items-center gap-2 border border-ink-700/60 text-ink-300 font-bold text-sm px-5 py-2.5 rounded-xl hover:border-brand/70 hover:text-brand transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
                 >
                   Ver servicios
-                  <ChevronDown className="w-4 h-4" aria-hidden />
+                  <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:translate-y-0.5" aria-hidden />
                 </a>
               </motion.div>
             </motion.div>
