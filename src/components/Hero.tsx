@@ -108,7 +108,8 @@ export default function Hero() {
                 }}
                 className="text-ink-400 text-lg md:text-xl max-w-[500px] leading-relaxed mb-12"
               >
-                Limpieza profesional y mantenimiento integral para hogares y empresas.
+                Limpieza profesional y mantenimiento integral para{' '}
+                <span className="text-brand font-extrabold">hogares y empresas</span>.{' '}
                 Rápidos, confiables, al alcance de un mensaje.
               </motion.p>
 
@@ -179,22 +180,19 @@ export default function Hero() {
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
                   </span>
                   <span className="text-brand text-[10px] font-extrabold tracking-[0.22em] uppercase">
-                    En operación
+                    Operación activa
                   </span>
                 </div>
 
                 {/* Hairline separator */}
                 <div className="border-t border-ink-700/40 mb-4" />
 
-                {/* SLA value */}
+                {/* Body text */}
                 <p
-                  className="font-black text-ink-100 leading-none mb-1.5"
-                  style={{ fontSize: 'clamp(2rem, 3vw, 2.75rem)' }}
+                  className="font-extrabold text-ink-100 leading-snug"
+                  style={{ fontSize: 'clamp(1.15rem, 1.8vw, 1.45rem)' }}
                 >
-                  {'< 2 hrs'}
-                </p>
-                <p className="text-ink-500 text-sm font-semibold">
-                  Tiempo de respuesta
+                  Atención rápida y coordinación profesional
                 </p>
               </motion.div>
             </div>
