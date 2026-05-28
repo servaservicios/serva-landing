@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import { motion } from 'framer-motion'
-import { MessageCircle, ChevronDown } from 'lucide-react'
+import { MessageCircle, ChevronDown, Sparkles, Wind, Droplet, Bug, Wrench, Layers } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import { WHATSAPP_URL } from '../lib/constants'
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const
@@ -10,13 +11,13 @@ const heroStats = [
   { value: '+60',    label: 'Servicios especializados', delay: 0.85 },
 ]
 
-const tickerCategories = [
-  { id: 'limpieza',           label: 'Limpieza' },
-  { id: 'aire-acondicionado', label: 'Aire Acondicionado' },
-  { id: 'plomeria',           label: 'Plomería' },
-  { id: 'fumigacion',         label: 'Fumigación' },
-  { id: 'instalaciones',      label: 'Instalaciones' },
-  { id: 'otros',              label: 'Otros Servicios' },
+const tickerCategories: Array<{ id: string; label: string; Icon: LucideIcon }> = [
+  { id: 'limpieza',           label: 'Limpieza',           Icon: Sparkles },
+  { id: 'aire-acondicionado', label: 'Aire Acondicionado', Icon: Wind     },
+  { id: 'plomeria',           label: 'Plomería',           Icon: Droplet  },
+  { id: 'fumigacion',         label: 'Fumigación',         Icon: Bug      },
+  { id: 'instalaciones',      label: 'Instalaciones',      Icon: Wrench   },
+  { id: 'otros',              label: 'Otros Servicios',    Icon: Layers   },
 ]
 
 export default function Hero() {
@@ -204,15 +205,30 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bottom service ticker — simplified */}
+      {/* Bottom: service selector bar */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-        className="relative z-10 border-t border-ink-800/40 px-8 md:px-16 lg:px-24 py-5"
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.7, ease }}
+        className="relative z-10 border-t border-ink-800/30 py-4"
       >
-        <div className="max-w-[1440px] mx-auto">
-          <div className="flex flex-wrap gap-x-7 gap-y-2 items-center justify-center">
+        {/* Horizontal scroll on mobile, centered on desktop */}
+        <div className="overflow-x-auto hide-scrollbar">
+          <nav
+            aria-label="Categorías de servicios"
+            className="flex items-stretch mx-auto w-fit"
+            style={{
+              background: 'oklch(11% 0.010 152 / 0.68)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              border: '1px solid oklch(55% 0.010 152 / 0.20)',
+              borderRadius: '14px',
+              boxShadow:
+                '0 0 0 1px oklch(73.5% 0.186 152 / 0.07), ' +
+                'inset 0 1px 0 oklch(100% 0 0 / 0.05), ' +
+                '0 8px 24px oklch(8% 0.012 152 / 0.40)',
+            }}
+          >
             {tickerCategories.map((cat, i) => (
               <Fragment key={cat.id}>
                 <a
@@ -220,19 +236,39 @@ export default function Hero() {
                   onClick={(e) => {
                     e.preventDefault()
                     setTimeout(() => {
-                      window.dispatchEvent(new CustomEvent('serva:open-category', { detail: cat.id }))
+                      window.dispatchEvent(
+                        new CustomEvent('serva:open-category', { detail: cat.id })
+                      )
                     }, 0)
                   }}
-                  className="text-ink-500 text-sm font-medium hover:text-brand transition-colors duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand rounded-sm"
+                  className="group relative flex items-center gap-2 px-5 py-3.5 text-ink-500 text-[13px] font-semibold whitespace-nowrap transition-colors duration-200 hover:text-brand focus-visible:outline-none focus-visible:text-brand"
+                  style={{ borderRadius: i === 0 ? '13px 0 0 13px' : i === tickerCategories.length - 1 ? '0 13px 13px 0' : undefined }}
                 >
-                  {cat.label}
+                  {/* Hover tint layer */}
+                  <span
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
+                    style={{
+                      background: 'oklch(73.5% 0.186 152 / 0.07)',
+                      borderRadius: 'inherit',
+                    }}
+                    aria-hidden
+                  />
+                  <cat.Icon
+                    className="w-[15px] h-[15px] shrink-0 relative z-10 opacity-50 group-hover:opacity-100 transition-opacity duration-200"
+                    aria-hidden
+                  />
+                  <span className="relative z-10">{cat.label}</span>
                 </a>
                 {i < tickerCategories.length - 1 && (
-                  <span className="text-ink-800 select-none" aria-hidden>·</span>
+                  <div
+                    className="w-px self-stretch my-2.5 shrink-0"
+                    style={{ background: 'oklch(55% 0.010 152 / 0.22)' }}
+                    aria-hidden
+                  />
                 )}
               </Fragment>
             ))}
-          </div>
+          </nav>
         </div>
       </motion.div>
     </section>
