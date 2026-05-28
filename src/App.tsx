@@ -2,6 +2,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ClientLogos from './components/ClientLogos'
 import Services from './components/Services'
+import CustomRequest from './components/CustomRequest'
 import Industries from './components/Industries'
 import WhyServa from './components/WhyServa'
 import Process from './components/Process'
@@ -18,6 +19,7 @@ export default function App() {
       <main>
         <Hero />
         <Services />
+        <CustomRequest />
         <ClientLogos />
         <Industries />
         <WhyServa />
