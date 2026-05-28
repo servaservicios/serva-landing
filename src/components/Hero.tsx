@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { motion } from 'framer-motion'
 import { MessageCircle, ChevronDown } from 'lucide-react'
 import { WHATSAPP_URL } from '../lib/constants'
@@ -9,12 +10,13 @@ const heroStats = [
   { value: '+60',    label: 'Servicios especializados', delay: 0.85 },
 ]
 
-const tickerServices = [
-  'Limpieza',
-  'Aire Acondicionado',
-  'Plomería',
-  'Fumigación',
-  'Instalaciones',
+const tickerCategories = [
+  { id: 'limpieza',           label: 'Limpieza' },
+  { id: 'aire-acondicionado', label: 'Aire Acondicionado' },
+  { id: 'plomeria',           label: 'Plomería' },
+  { id: 'fumigacion',         label: 'Fumigación' },
+  { id: 'instalaciones',      label: 'Instalaciones' },
+  { id: 'otros',              label: 'Otros Servicios' },
 ]
 
 export default function Hero() {
@@ -210,20 +212,25 @@ export default function Hero() {
         className="relative z-10 border-t border-ink-800/40 px-8 md:px-16 lg:px-24 py-5"
       >
         <div className="max-w-[1440px] mx-auto">
-          <div className="flex flex-wrap gap-x-8 gap-y-2 items-center">
-            <span className="text-ink-700 text-xs font-extrabold tracking-widest uppercase shrink-0">
-              Servicios
-            </span>
-            {tickerServices.map((name, i) => (
-              <span
-                key={name}
-                className="text-ink-500 text-sm font-medium flex items-center gap-8"
-              >
-                {name}
-                {i < tickerServices.length - 1 && (
-                  <span className="text-ink-700 select-none" aria-hidden>·</span>
+          <div className="flex flex-wrap gap-x-7 gap-y-2 items-center justify-center">
+            {tickerCategories.map((cat, i) => (
+              <Fragment key={cat.id}>
+                <a
+                  href="#servicios"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    setTimeout(() => {
+                      window.dispatchEvent(new CustomEvent('serva:open-category', { detail: cat.id }))
+                    }, 0)
+                  }}
+                  className="text-ink-500 text-sm font-medium hover:text-brand transition-colors duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand rounded-sm"
+                >
+                  {cat.label}
+                </a>
+                {i < tickerCategories.length - 1 && (
+                  <span className="text-ink-800 select-none" aria-hidden>·</span>
                 )}
-              </span>
+              </Fragment>
             ))}
           </div>
         </div>
