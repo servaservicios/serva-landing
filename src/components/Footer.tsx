@@ -50,7 +50,14 @@ export default function Footer() {
             <ul className="flex flex-col gap-3" role="list">
               {SERVICE_CATEGORIES.map(cat => (
                 <li key={cat.id}>
-                  <a href={`#cat-${cat.id}`} className={catLink}>
+                  <a
+                    href={`#cat-${cat.id}`}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      window.dispatchEvent(new CustomEvent('serva:open-category', { detail: cat.id }))
+                    }}
+                    className={catLink}
+                  >
                     {CAT_LABEL[cat.id]}
                   </a>
                 </li>

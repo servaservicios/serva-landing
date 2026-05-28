@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { flushSync } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Sparkles, Wind, Droplets, Bug, Wrench, Truck,
@@ -148,19 +149,29 @@ export default function Services() {
       })
   }, [])
 
-  // Auto-open accordion from hash (e.g. #cat-limpieza)
+  // Hash-based open (e.g. shared URL with #cat-limpieza)
   useEffect(() => {
     const openFromHash = () => {
       const m = window.location.hash.match(/^#cat-(.+)$/)
       if (!m) return
       const id = m[1]
-      if (SERVICE_CATEGORIES.some(c => c.id === id)) {
-        setOpen(id)
-      }
+      if (SERVICE_CATEGORIES.some(c => c.id === id)) setOpen(id)
     }
     openFromHash()
     window.addEventListener('hashchange', openFromHash)
     return () => window.removeEventListener('hashchange', openFromHash)
+  }, [])
+
+  // In-page navigation from footer: open accordion first, then scroll
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const id = (e as CustomEvent<string>).detail
+      if (!SERVICE_CATEGORIES.some(c => c.id === id)) return
+      flushSync(() => setOpen(id))
+      document.getElementById(`cat-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+    window.addEventListener('serva:open-category', handler)
+    return () => window.removeEventListener('serva:open-category', handler)
   }, [])
 
   return (
@@ -199,27 +210,17 @@ export default function Services() {
         </motion.div>
 
         {/* Accordion cards */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-60px' }}
-          variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
-          className="flex flex-col gap-3"
-        >
+        <div className="flex flex-col gap-3">
           {SERVICE_CATEGORIES.map((cat) => {
             const cfg = configs[cat.id] ?? configs['otros']
             const { Icon } = cfg
             const isOpen = open === cat.id
 
             return (
-              <motion.div
+              <div
                 key={cat.id}
                 id={`cat-${cat.id}`}
                 style={{ scrollMarginTop: '96px' }}
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
-                }}
                 className={`rounded-2xl border overflow-hidden transition-all duration-300 ${
                   isOpen
                     ? 'border-brand/40 shadow-md shadow-brand/8'
@@ -392,10 +393,10 @@ export default function Services() {
                   )}
                 </AnimatePresence>
 
-              </motion.div>
+              </div>
             )
           })}
-        </motion.div>
+        </div>
 
       </div>
     </section>
