@@ -165,23 +165,36 @@ export default function Hero() {
                 </motion.div>
               ))}
 
-              {/* Scope stamp — replaces MTY card + zone tag */}
+              {/* Operational status card */}
               <motion.div
                 initial={{ opacity: 0, x: 24 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.0, duration: 0.65, ease }}
                 className="rounded-2xl px-7 py-5 border bg-ink-900/60 border-ink-800/40"
               >
+                {/* Live status badge */}
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="relative flex h-2 w-2 shrink-0">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand opacity-60" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
+                  </span>
+                  <span className="text-brand text-[10px] font-extrabold tracking-[0.22em] uppercase">
+                    En operación
+                  </span>
+                </div>
+
+                {/* Hairline separator */}
+                <div className="border-t border-ink-700/40 mb-4" />
+
+                {/* SLA value */}
                 <p
-                  className="font-black text-ink-100 leading-[0.95] mb-2"
+                  className="font-black text-ink-100 leading-none mb-1.5"
                   style={{ fontSize: 'clamp(2rem, 3vw, 2.75rem)' }}
                 >
-                  Hogares
-                  <br />
-                  y empresas
+                  {'< 2 hrs'}
                 </p>
                 <p className="text-ink-500 text-sm font-semibold">
-                  Residencial · Comercial · Industrial
+                  Tiempo de respuesta
                 </p>
               </motion.div>
             </div>
