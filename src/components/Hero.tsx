@@ -108,9 +108,10 @@ export default function Hero() {
                 }}
                 className="text-ink-400 text-lg md:text-xl max-w-[500px] leading-relaxed mb-12"
               >
-                Limpieza profesional y mantenimiento integral para{' '}
+                Limpieza profesional y mantenimiento para{' '}
                 <span className="text-brand font-extrabold">hogares y empresas</span>.{' '}
-                Rápidos, confiables, al alcance de un mensaje.
+                <span className="text-ink-200 font-semibold">Un solo punto de contacto</span>{' '}
+                para todos tus servicios.
               </motion.p>
 
               <motion.div
