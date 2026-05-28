@@ -52,7 +52,7 @@ export default function FAQ() {
               >
                 <button
                   onClick={() => setOpen(open === i ? null : i)}
-                  className="w-full flex items-start justify-between gap-4 py-6 text-left group"
+                  className="w-full flex items-start justify-between gap-4 py-6 text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-sm"
                   aria-expanded={open === i}
                 >
                   <span className="font-bold text-ink-800 text-base leading-snug group-hover:text-ink-950 transition-colors">

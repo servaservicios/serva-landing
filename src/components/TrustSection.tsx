@@ -14,6 +14,13 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
     if (!inView) return
     const el = ref.current
     if (!el) return
+
+    // Respect user's motion preference — show final value instantly
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      el.textContent = String(value) + suffix
+      return
+    }
+
     const duration = 1400
     const start = performance.now()
     let rafId: number
@@ -151,7 +158,7 @@ export default function TrustSection() {
         />
 
         {/* Animated track */}
-        <div className="testimonial-marquee flex gap-4 items-stretch px-4">
+        <div className="testimonial-marquee flex gap-4 items-stretch px-4" aria-hidden>
           {track.map((t, i) => {
             const colors = avatarColors(t.name)
             const initials = getInitials(t.name)

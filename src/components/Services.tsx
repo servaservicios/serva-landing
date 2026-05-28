@@ -240,7 +240,7 @@ export default function Services() {
                 {/* ── Clickable category card header ── */}
                 <button
                   onClick={() => setOpen(isOpen ? null : cat.id)}
-                  className="w-full flex flex-col sm:flex-row text-left group"
+                  className="w-full flex flex-col sm:flex-row text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-inset"
                   aria-expanded={isOpen}
                 >
                   {/* Visual panel */}
