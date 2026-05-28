@@ -138,14 +138,21 @@ const serviceConfigs: Record<string, ServiceConfig> = {
 export default function Services() {
   const [open, setOpen] = useState<string | null>(null)
 
-  // Preload all service card images after first paint so accordion opens instantly
+  // Preload service card images when browser is idle so accordion opens instantly
   useEffect(() => {
-    Object.values(serviceConfigs)
+    const images = Object.values(serviceConfigs)
       .filter((svc): svc is ServiceConfig & { image: string } => Boolean(svc.image))
-      .forEach(({ image }) => {
-        const img = new window.Image()
-        img.src = image
-      })
+      .map(svc => svc.image)
+
+    const load = () => images.forEach(src => { (new window.Image()).src = src })
+
+    if ('requestIdleCallback' in window) {
+      const id = requestIdleCallback(load, { timeout: 3000 })
+      return () => cancelIdleCallback(id)
+    } else {
+      const t = setTimeout(load, 3000)
+      return () => clearTimeout(t)
+    }
   }, [])
 
   // Hash-based open (e.g. shared URL with #cat-limpieza)

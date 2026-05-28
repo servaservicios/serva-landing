@@ -27,11 +27,22 @@ export default function Navbar() {
       }`}
     >
       <nav className="flex items-center justify-between px-6 md:px-12 lg:px-20 h-16 max-w-[1440px] mx-auto">
-        <a href="/" className="flex items-center group" aria-label="SERVA inicio">
+        <a
+          href="/"
+          className="flex items-center group"
+          aria-label="SERVA inicio"
+          onClick={(e) => {
+            e.preventDefault()
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+          }}
+        >
           <img
             src="/images/Logo%20Verde.png"
             alt="SERVA"
             className="h-20 w-auto"
+            width={160}
+            height={80}
+            fetchPriority="high"
             draggable={false}
           />
         </a>

@@ -48,7 +48,8 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center center' }}
           loading="eager"
-          decoding="auto"
+          decoding="async"
+          fetchPriority="high"
         />
         {/* Dark overlay — preserves text legibility and brand aesthetic */}
         <div

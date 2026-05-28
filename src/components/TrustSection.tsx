@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react'
 import { STATS, TESTIMONIALS } from '../lib/constants'
@@ -7,28 +7,32 @@ const ease = [0.25, 0.46, 0.45, 0.94] as const
 
 // ─── Animated counter ────────────────────────────────────────────────────────
 function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
-  const [count, setCount] = useState(0)
   const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true })
 
   useEffect(() => {
     if (!inView) return
+    const el = ref.current
+    if (!el) return
     const duration = 1400
     const start = performance.now()
+    let rafId: number
     const frame = (now: number) => {
       const elapsed = now - start
       const progress = Math.min(elapsed / duration, 1)
       const eased = 1 - Math.pow(1 - progress, 3)
-      setCount(Math.round(eased * value))
-      if (progress < 1) requestAnimationFrame(frame)
+      el.textContent = String(Math.round(eased * value)) + suffix
+      if (progress < 1) {
+        rafId = requestAnimationFrame(frame)
+      }
     }
-    requestAnimationFrame(frame)
-  }, [inView, value])
+    rafId = requestAnimationFrame(frame)
+    return () => cancelAnimationFrame(rafId)
+  }, [inView, value, suffix])
 
   return (
     <span ref={ref} aria-label={`${value}${suffix}`}>
-      {count}
-      {suffix}
+      0{suffix}
     </span>
   )
 }
@@ -61,12 +65,12 @@ export default function TrustSection() {
   const [canPrev, setCanPrev] = useState(false)
   const [canNext, setCanNext] = useState(true)
 
-  const updateNav = () => {
+  const updateNav = useCallback(() => {
     const el = scrollRef.current
     if (!el) return
     setCanPrev(el.scrollLeft > 8)
     setCanNext(el.scrollLeft < el.scrollWidth - el.clientWidth - 8)
-  }
+  }, [])
 
   useEffect(() => {
     const el = scrollRef.current

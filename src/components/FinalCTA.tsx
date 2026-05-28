@@ -16,6 +16,8 @@ export default function FinalCTA() {
         alt=""
         className="absolute inset-0 w-full h-full object-cover object-center opacity-[0.18] pointer-events-none"
         aria-hidden
+        loading="lazy"
+        decoding="async"
       />
 
       {/* Subtle dot grid on green */}
