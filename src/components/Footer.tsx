@@ -58,7 +58,7 @@ export default function Footer() {
                 <ul className="flex flex-col gap-2.5" role="list">
                   {cat.services.map(s => (
                     <li key={s.id}>
-                      <a href="#servicios" className={svcLink}>
+                      <a href={`#cat-${cat.id}`} className={svcLink}>
                         {s.name}
                       </a>
                     </li>
@@ -78,7 +78,7 @@ export default function Footer() {
                 <ul className="flex flex-col gap-2.5" role="list">
                   {cat.services.map(s => (
                     <li key={s.id}>
-                      <a href="#servicios" className={svcLink}>
+                      <a href={`#cat-${cat.id}`} className={svcLink}>
                         {s.name}
                       </a>
                     </li>

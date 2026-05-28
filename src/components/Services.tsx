@@ -148,6 +148,21 @@ export default function Services() {
       })
   }, [])
 
+  // Auto-open accordion from hash (e.g. #cat-limpieza)
+  useEffect(() => {
+    const openFromHash = () => {
+      const m = window.location.hash.match(/^#cat-(.+)$/)
+      if (!m) return
+      const id = m[1]
+      if (SERVICE_CATEGORIES.some(c => c.id === id)) {
+        setOpen(id)
+      }
+    }
+    openFromHash()
+    window.addEventListener('hashchange', openFromHash)
+    return () => window.removeEventListener('hashchange', openFromHash)
+  }, [])
+
   return (
     <section id="servicios" className="bg-white py-20 lg:py-28" aria-label="Servicios">
       <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24">
@@ -199,6 +214,8 @@ export default function Services() {
             return (
               <motion.div
                 key={cat.id}
+                id={`cat-${cat.id}`}
+                style={{ scrollMarginTop: '96px' }}
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
