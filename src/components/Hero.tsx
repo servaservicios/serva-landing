@@ -1,15 +1,20 @@
 import { motion } from 'framer-motion'
 import { MessageCircle, ChevronDown } from 'lucide-react'
-import { WHATSAPP_URL, SERVICE_CATEGORIES } from '../lib/constants'
+import { WHATSAPP_URL } from '../lib/constants'
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const
 
-const allServiceNames = SERVICE_CATEGORIES.map(c => c.name)
-
 const heroStats = [
   { value: '+2,000', label: 'Servicios completados', delay: 0.7 },
-  { value: '+60', label: 'Servicios especializados', delay: 0.85 },
-  { value: 'MTY', label: 'Monterrey y Área Metropolitana', delay: 1.0 },
+  { value: '+60',    label: 'Servicios especializados', delay: 0.85 },
+]
+
+const tickerServices = [
+  'Limpieza',
+  'Aire Acondicionado',
+  'Plomería',
+  'Fumigación',
+  'Instalaciones',
 ]
 
 export default function Hero() {
@@ -134,7 +139,7 @@ export default function Hero() {
               </motion.div>
             </motion.div>
 
-            {/* Right: stat cards (desktop only) */}
+            {/* Right: stat cards + scope stamp (desktop only) */}
             <div className="hidden lg:flex flex-col gap-3">
               {heroStats.map((stat, i) => (
                 <motion.div
@@ -145,9 +150,7 @@ export default function Hero() {
                   className={`rounded-2xl px-7 py-5 border ${
                     i === 0
                       ? 'bg-brand/10 border-brand/20'
-                      : i === 1
-                      ? 'bg-ink-800/50 border-ink-700/50'
-                      : 'bg-ink-900/60 border-ink-800/40'
+                      : 'bg-ink-800/50 border-ink-700/50'
                   }`}
                 >
                   <p
@@ -162,17 +165,24 @@ export default function Hero() {
                 </motion.div>
               ))}
 
-              {/* Zone tag */}
+              {/* Scope stamp — replaces MTY card + zone tag */}
               <motion.div
                 initial={{ opacity: 0, x: 24 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.15, duration: 0.65, ease }}
-                className="flex items-center gap-3 border border-ink-800/40 rounded-2xl px-7 py-4"
+                transition={{ delay: 1.0, duration: 0.65, ease }}
+                className="rounded-2xl px-7 py-5 border bg-ink-900/60 border-ink-800/40"
               >
-                <span className="w-2 h-2 rounded-full bg-brand shrink-0" aria-hidden />
-                <span className="text-ink-400 text-sm font-semibold">
-                  Monterrey y Área Metropolitana
-                </span>
+                <p
+                  className="font-black text-ink-100 leading-[0.95] mb-2"
+                  style={{ fontSize: 'clamp(2rem, 3vw, 2.75rem)' }}
+                >
+                  Hogares
+                  <br />
+                  y empresas
+                </p>
+                <p className="text-ink-500 text-sm font-semibold">
+                  Residencial · Comercial · Industrial
+                </p>
               </motion.div>
             </div>
 
@@ -180,7 +190,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bottom service ticker */}
+      {/* Bottom service ticker — simplified */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -188,18 +198,18 @@ export default function Hero() {
         className="relative z-10 border-t border-ink-800/40 px-8 md:px-16 lg:px-24 py-5"
       >
         <div className="max-w-[1440px] mx-auto">
-          <div className="flex flex-wrap gap-x-5 gap-y-2 items-center">
+          <div className="flex flex-wrap gap-x-8 gap-y-2 items-center">
             <span className="text-ink-700 text-xs font-extrabold tracking-widest uppercase shrink-0">
               Servicios
             </span>
-            {allServiceNames.map((name, i) => (
+            {tickerServices.map((name, i) => (
               <span
                 key={name}
-                className="text-ink-600 text-sm font-medium flex items-center gap-5"
+                className="text-ink-500 text-sm font-medium flex items-center gap-8"
               >
                 {name}
-                {i < allServiceNames.length - 1 && (
-                  <span className="text-ink-800 select-none" aria-hidden>·</span>
+                {i < tickerServices.length - 1 && (
+                  <span className="text-ink-700 select-none" aria-hidden>·</span>
                 )}
               </span>
             ))}
