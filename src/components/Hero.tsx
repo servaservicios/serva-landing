@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import { motion } from 'framer-motion'
-import { MessageCircle, ChevronDown, Sparkles, Wind, Droplet, Bug, Wrench, Layers } from 'lucide-react'
+import { MessageCircle, ChevronDown, Sparkles, Wind, Droplet, Bug, Wrench, Layers, UserCheck, Gauge, ShieldCheck } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { WHATSAPP_URL } from '../lib/constants'
 
@@ -9,6 +9,12 @@ const ease = [0.25, 0.46, 0.45, 0.94] as const
 const heroStats = [
   { value: '+2,000', label: 'Servicios completados', delay: 0.7 },
   { value: '+60',    label: 'Servicios especializados', delay: 0.85 },
+]
+
+const trustBadges: Array<{ label: string; Icon: LucideIcon }> = [
+  { label: 'Personal capacitado',               Icon: UserCheck   },
+  { label: 'Productos y equipos profesionales', Icon: Gauge       },
+  { label: 'Seguridad y confianza',             Icon: ShieldCheck },
 ]
 
 const tickerCategories: Array<{ id: string; label: string; Icon: LucideIcon }> = [
@@ -109,13 +115,34 @@ export default function Hero() {
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
                 }}
-                className="text-ink-400 text-lg md:text-xl max-w-[500px] leading-relaxed mb-12"
+                className="text-ink-400 text-lg md:text-xl max-w-[500px] leading-relaxed mb-7"
               >
                 Limpieza profesional y mantenimiento para{' '}
                 <span className="text-brand font-extrabold">hogares y empresas</span>.{' '}
                 <span className="text-ink-200 font-semibold">Un solo punto de contacto</span>{' '}
                 para todos tus servicios.
               </motion.p>
+
+              {/* Trust badges */}
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 12 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
+                }}
+                className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-10"
+              >
+                {trustBadges.map((badge, i) => (
+                  <Fragment key={badge.label}>
+                    <div className="flex items-center gap-1.5">
+                      <badge.Icon className="w-3.5 h-3.5 text-brand shrink-0" aria-hidden />
+                      <span className="text-ink-400 text-[13px] font-medium">{badge.label}</span>
+                    </div>
+                    {i < trustBadges.length - 1 && (
+                      <span className="text-ink-700 text-xs select-none leading-none" aria-hidden>·</span>
+                    )}
+                  </Fragment>
+                ))}
+              </motion.div>
 
               <motion.div
                 variants={{
