@@ -239,11 +239,11 @@ export default function Hero() {
         transition={{ delay: 1.2, duration: 0.7, ease }}
         className="relative z-10 border-t border-ink-800/30 py-4"
       >
-        {/* Horizontal scroll on mobile, centered on desktop */}
-        <div className="overflow-x-auto hide-scrollbar">
+        {/* Horizontal scroll on mobile, full-width centered on desktop */}
+        <div className="overflow-x-auto hide-scrollbar px-6 md:px-10">
           <nav
             aria-label="Categorías de servicios"
-            className="flex items-stretch mx-auto w-fit"
+            className="flex items-stretch mx-auto w-full max-w-[960px]"
             style={{
               background: 'oklch(11% 0.010 152 / 0.68)',
               backdropFilter: 'blur(20px)',
@@ -268,7 +268,7 @@ export default function Hero() {
                       )
                     }, 0)
                   }}
-                  className="group relative flex items-center gap-2 px-5 py-3.5 text-ink-500 text-[13px] font-semibold whitespace-nowrap transition-colors duration-200 hover:text-brand focus-visible:outline-none focus-visible:text-brand"
+                  className="group relative flex flex-1 items-center justify-center gap-2 px-4 py-4 text-ink-500 text-[13px] font-semibold whitespace-nowrap transition-colors duration-200 hover:text-brand focus-visible:outline-none focus-visible:text-brand"
                   style={{ borderRadius: i === 0 ? '13px 0 0 13px' : i === tickerCategories.length - 1 ? '0 13px 13px 0' : undefined }}
                 >
                   {/* Hover tint layer */}
@@ -281,14 +281,14 @@ export default function Hero() {
                     aria-hidden
                   />
                   <cat.Icon
-                    className="w-[15px] h-[15px] shrink-0 relative z-10 opacity-50 group-hover:opacity-100 transition-opacity duration-200"
+                    className="w-4 h-4 shrink-0 relative z-10 text-brand"
                     aria-hidden
                   />
                   <span className="relative z-10">{cat.label}</span>
                 </a>
                 {i < tickerCategories.length - 1 && (
                   <div
-                    className="w-px self-stretch my-2.5 shrink-0"
+                    className="w-px self-stretch my-3 shrink-0"
                     style={{ background: 'oklch(55% 0.010 152 / 0.22)' }}
                     aria-hidden
                   />
