@@ -85,7 +85,7 @@ export const STATS: Array<
 > = [
   { value: 2000, suffix: '+', label: 'Servicios completados' },
   { value: 60,   suffix: '+', label: 'Servicios especializados' },
-  { display: 'MTY+ZM', label: 'Atención en Monterrey y Área Metropolitana' },
+  { display: 'Personal capacitado', label: 'Técnicos especializados para hogares y empresas' },
 ]
 
 export const PROCESS_STEPS = [
