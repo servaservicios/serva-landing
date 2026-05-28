@@ -54,7 +54,10 @@ export default function Footer() {
                     href={`#cat-${cat.id}`}
                     onClick={(e) => {
                       e.preventDefault()
-                      window.dispatchEvent(new CustomEvent('serva:open-category', { detail: cat.id }))
+                      const id = cat.id
+                      setTimeout(() => {
+                        window.dispatchEvent(new CustomEvent('serva:open-category', { detail: id }))
+                      }, 0)
                     }}
                     className={catLink}
                   >

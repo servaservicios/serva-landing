@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { flushSync } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Sparkles, Wind, Droplets, Bug, Wrench, Truck,
@@ -167,8 +166,12 @@ export default function Services() {
     const handler = (e: Event) => {
       const id = (e as CustomEvent<string>).detail
       if (!SERVICE_CATEGORIES.some(c => c.id === id)) return
-      flushSync(() => setOpen(id))
-      document.getElementById(`cat-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      setOpen(id)
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          document.getElementById(`cat-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        })
+      })
     }
     window.addEventListener('serva:open-category', handler)
     return () => window.removeEventListener('serva:open-category', handler)
