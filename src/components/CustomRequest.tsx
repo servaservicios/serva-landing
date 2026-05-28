@@ -59,8 +59,8 @@ export default function CustomRequest() {
 
             <p className="text-ink-400 text-base md:text-lg leading-relaxed">
               Nuestro catálogo es el punto de partida, no el límite.
-              Cuéntanos tu requerimiento — el equipo de SERVA evalúa cada
-              proyecto de forma individual y responde en menos de 2 horas.
+              Cuéntanos tu requerimiento y el equipo de SERVA diseña
+              una propuesta a la medida de tu espacio y tus necesidades.
             </p>
           </motion.div>
 
@@ -82,7 +82,7 @@ export default function CustomRequest() {
               Cuéntanos por WhatsApp
             </a>
             <p className="text-ink-700 text-xs text-center font-medium tracking-wide">
-              Respuesta en menos de 2 horas · Sin compromisos
+              Cotización personalizada · Sin compromisos
             </p>
           </motion.div>
 
