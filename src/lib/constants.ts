@@ -19,7 +19,7 @@ export const SERVICE_CATEGORIES = [
       { id: 'limpieza-muebles',          name: 'Limpieza de Muebles y Alfombras' },
       { id: 'limpieza-pisos',            name: 'Limpieza de Pisos' },
       { id: 'limpieza-post-construccion',name: 'Limpieza Post-Construcción' },
-      { id: 'limpieza-profunda',         name: 'Limpieza Profunda' },
+      { id: 'limpieza-profunda',         name: 'Limpieza Profunda y Fina' },
       { id: 'limpieza-fosas',            name: 'Limpieza de Fosas Sépticas y Cisternas' },
       { id: 'limpieza-trampas',          name: 'Limpieza de Trampas de Grasa' },
     ],
