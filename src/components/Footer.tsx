@@ -7,23 +7,17 @@ const CAT_LABEL: Record<string, string> = {
   'aire-acondicionado':  'Aire Acondicionado',
   'plomeria':            'Plomería',
   'fumigacion':          'Fumigación',
-  'instalaciones':       'Instalaciones',
+  'instalaciones':       'Instalaciones y Mantenimiento',
   'otros':               'Otros Servicios',
 }
 
-const colA = ['limpieza', 'plomeria']
-const colB = ['aire-acondicionado', 'fumigacion', 'instalaciones', 'otros']
-
-const svcLink = 'text-ink-400 text-sm font-medium hover:text-ink-200 transition-colors'
+const catLink = 'text-ink-400 text-sm font-medium hover:text-ink-200 transition-colors'
 
 export default function Footer() {
-  const groupA = SERVICE_CATEGORIES.filter(c => colA.includes(c.id))
-  const groupB = SERVICE_CATEGORIES.filter(c => colB.includes(c.id))
-
   return (
     <footer className="bg-ink-950 border-t border-ink-800/60" aria-label="Pie de página">
       <div className="max-w-[1440px] mx-auto px-8 md:px-16 lg:px-24 py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12 mb-12">
 
           {/* Brand */}
           <div>
@@ -48,44 +42,20 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Services — column A: Limpieza + Plomería */}
-          <div className="flex flex-col gap-7">
-            {groupA.map(cat => (
-              <div key={cat.id}>
-                <p className="text-ink-600 font-extrabold text-xs tracking-widest uppercase mb-4">
-                  {CAT_LABEL[cat.id]}
-                </p>
-                <ul className="flex flex-col gap-2.5" role="list">
-                  {cat.services.map(s => (
-                    <li key={s.id}>
-                      <a href={`#cat-${cat.id}`} className={svcLink}>
-                        {s.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          {/* Services — column B: AC + Fumigación + Instalaciones + Otros */}
-          <div className="flex flex-col gap-7">
-            {groupB.map(cat => (
-              <div key={cat.id}>
-                <p className="text-ink-600 font-extrabold text-xs tracking-widest uppercase mb-4">
-                  {CAT_LABEL[cat.id]}
-                </p>
-                <ul className="flex flex-col gap-2.5" role="list">
-                  {cat.services.map(s => (
-                    <li key={s.id}>
-                      <a href={`#cat-${cat.id}`} className={svcLink}>
-                        {s.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          {/* Services */}
+          <div>
+            <p className="text-ink-600 font-extrabold text-xs tracking-widest uppercase mb-5">
+              Servicios
+            </p>
+            <ul className="flex flex-col gap-3" role="list">
+              {SERVICE_CATEGORIES.map(cat => (
+                <li key={cat.id}>
+                  <a href={`#cat-${cat.id}`} className={catLink}>
+                    {CAT_LABEL[cat.id]}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Contact */}
@@ -97,7 +67,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${PHONE_DISPLAY.replace(/\s/g, '')}`}
-                  className={svcLink}
+                  className={catLink}
                 >
                   {PHONE_DISPLAY}
                 </a>
@@ -107,7 +77,7 @@ export default function Footer() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={svcLink}
+                  className={catLink}
                 >
                   WhatsApp
                 </a>
@@ -117,7 +87,7 @@ export default function Footer() {
                   href="https://www.instagram.com/serva.servicios"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={svcLink}
+                  className={catLink}
                 >
                   Instagram
                 </a>
@@ -127,7 +97,7 @@ export default function Footer() {
                   href="https://linkedin.com/company/servaservicios"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={svcLink}
+                  className={catLink}
                 >
                   LinkedIn
                 </a>
@@ -135,7 +105,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:contacto@servaservicios.com"
-                  className={svcLink}
+                  className={catLink}
                 >
                   contacto@servaservicios.com
                 </a>
