@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import { motion } from 'framer-motion'
-import { MessageCircle, ChevronDown, Sparkles, Wind, Droplet, Bug, Wrench, Layers, UserCheck, Gauge, ShieldCheck } from 'lucide-react'
+import { MessageCircle, ChevronDown, Sparkles, Wind, Droplet, Bug, Wrench, Layers, UserCheck, SprayCan, ShieldCheck } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { WHATSAPP_URL } from '../lib/constants'
 
@@ -13,7 +13,7 @@ const heroStats = [
 
 const trustBadges: Array<{ label: string; Icon: LucideIcon }> = [
   { label: 'Personal capacitado',               Icon: UserCheck   },
-  { label: 'Productos y equipos profesionales', Icon: Gauge       },
+  { label: 'Productos y equipos profesionales', Icon: SprayCan    },
   { label: 'Seguridad y confianza',             Icon: ShieldCheck },
 ]
 
