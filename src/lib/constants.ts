@@ -129,8 +129,8 @@ export const FAQS = [
     a: 'Usamos productos certificados, biodegradables y seguros para personas, mascotas y superficies delicadas. Para servicios industriales usamos los insumos específicos al tipo de contaminante.',
   },
   {
-    q: '¿Qué incluye el servicio de mantenimiento general?',
-    a: 'Revisión y atención de plomería, electricidad básica, pintura, carpintería y pequeñas reparaciones. Es el servicio ideal para edificios y propiedades en renta.',
+    q: '¿Entregan certificados y manifiestos al finalizar los servicios?',
+    a: 'Sí. Los servicios de fumigación concluyen con certificado oficial ante la Secretaría de Salud; los de limpieza y desazolve de trampas de grasa incluyen manifiesto de disposición ante Agua y Drenaje de Monterrey. Toda la documentación se entrega al cierre del servicio, sin gestiones adicionales de tu parte.',
   },
   {
     q: '¿Tienen facturas o comprobantes fiscales?',
