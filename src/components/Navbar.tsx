@@ -74,7 +74,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-white/96 backdrop-blur-xl border-b border-ink-200/60'
+          ? 'bg-ink-950/96 backdrop-blur-xl border-b border-ink-800/60'
           : 'bg-transparent'
       }`}
     >
@@ -120,7 +120,7 @@ export default function Navbar() {
                     aria-haspopup="true"
                     onClick={() => setServicesOpen(v => !v)}
                     className={`flex items-center gap-1 text-sm font-semibold transition-colors duration-150 ${
-                      servicesOpen ? 'text-ink-900' : 'text-ink-600 hover:text-ink-900'
+                      servicesOpen ? 'text-ink-100' : 'text-ink-400 hover:text-ink-100'
                     }`}
                   >
                     Servicios
@@ -155,7 +155,7 @@ export default function Navbar() {
                                   setServicesOpen(false)
                                   openCategory(cat.id)
                                 }}
-                                className="flex items-center px-3.5 py-2.5 rounded-lg text-ink-600 text-sm font-semibold hover:text-brand hover:bg-brand/[0.08] transition-all duration-150"
+                                className="flex items-center px-3.5 py-2.5 rounded-lg text-ink-400 text-sm font-semibold hover:text-brand hover:bg-brand/[0.08] transition-all duration-150"
                               >
                                 {cat.label}
                               </a>
@@ -174,7 +174,7 @@ export default function Navbar() {
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="text-ink-600 hover:text-ink-900 text-sm font-semibold transition-colors duration-150"
+                  className="text-ink-400 hover:text-ink-100 text-sm font-semibold transition-colors duration-150"
                 >
                   {link.label}
                 </a>
@@ -196,7 +196,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(v => !v)}
-          className="md:hidden text-ink-700 p-2 -mr-2 hover:text-ink-950 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-md"
+          className="md:hidden text-ink-200 p-2 -mr-2 hover:text-ink-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-md"
           aria-label={mobileOpen ? 'Cerrar menú' : 'Abrir menú'}
           aria-expanded={mobileOpen}
         >
@@ -212,7 +212,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="md:hidden bg-white/98 backdrop-blur-xl border-b border-ink-200/60 px-6 pt-4 pb-8"
+            className="md:hidden bg-ink-950/98 backdrop-blur-xl border-b border-ink-800/60 px-6 pt-4 pb-8"
           >
             <ul className="flex flex-col gap-5 mb-8" role="list">
               {NAV_LINKS.map(link => {
@@ -223,7 +223,7 @@ export default function Navbar() {
                       <button
                         type="button"
                         onClick={() => setMobileServicesOpen(v => !v)}
-                        className="flex items-center gap-2 text-ink-800 hover:text-ink-950 font-bold text-2xl transition-colors text-left"
+                        className="flex items-center gap-2 text-ink-200 hover:text-ink-50 font-bold text-2xl transition-colors text-left"
                       >
                         Servicios
                         <ChevronDown
@@ -241,7 +241,7 @@ export default function Navbar() {
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.22, ease: 'easeOut' }}
-                            className="flex flex-col gap-3 mt-4 pl-5 border-l border-ink-200/60 overflow-hidden"
+                            className="flex flex-col gap-3 mt-4 pl-5 border-l border-ink-800/60 overflow-hidden"
                             role="list"
                           >
                             {SERVICE_DROPDOWN.map(cat => (
@@ -253,7 +253,7 @@ export default function Navbar() {
                                     openCategory(cat.id)
                                     closeMobile()
                                   }}
-                                  className="text-ink-600 hover:text-brand font-semibold text-lg transition-colors"
+                                  className="text-ink-400 hover:text-brand font-semibold text-lg transition-colors"
                                 >
                                   {cat.label}
                                 </a>
@@ -272,7 +272,7 @@ export default function Navbar() {
                     <a
                       href={link.href}
                       onClick={closeMobile}
-                      className="text-ink-800 hover:text-ink-950 font-bold text-2xl transition-colors"
+                      className="text-ink-200 hover:text-ink-50 font-bold text-2xl transition-colors"
                     >
                       {link.label}
                     </a>
