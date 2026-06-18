@@ -1,27 +1,353 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-MX">
   <head>
     <meta charset="UTF-8" />
-    <!-- Favicons — all sizes for browser tabs, bookmarks, home screen -->
+
+    <!-- ═══════════════════════════════════════════════════════
+         FAVICONS & MANIFEST
+    ═══════════════════════════════════════════════════════ -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- ═══════════════════════════════════════════════════════
+         VIEWPORT & INDEXING
+    ═══════════════════════════════════════════════════════ -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="SERVA — Limpieza profesional y mantenimiento integral para hogares y empresas en Monterrey y Área Metropolitana. Residencial, comercial e industrial." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+
+    <!-- ═══════════════════════════════════════════════════════
+         TITLE & META DESCRIPTION
+    ═══════════════════════════════════════════════════════ -->
+    <title>SERVA Servicios | Limpieza y Mantenimiento en Monterrey, NL</title>
+    <meta name="description" content="Empresa de limpieza profesional y mantenimiento integral en Monterrey, NL. Residencial, comercial e industrial. Aire acondicionado, plomería, fumigación y más. +2,000 servicios completados. Cotiza gratis por WhatsApp." />
+    <meta name="keywords" content="limpieza Monterrey, empresa de limpieza Monterrey, limpieza comercial Monterrey, limpieza industrial Monterrey, limpieza post construcción Monterrey, mantenimiento Monterrey, mantenimiento de oficinas Monterrey, aire acondicionado Monterrey, plomería Monterrey, electricista Monterrey, fumigación Monterrey, facility services Monterrey, limpieza para empresas Monterrey, limpieza profunda Monterrey, SERVA servicios" />
+    <meta name="author" content="SERVA Servicios" />
     <meta name="theme-color" content="#2ecc70" />
-    <meta property="og:title" content="SERVA — Limpieza y Mantenimiento en Monterrey" />
-    <meta property="og:description" content="12 servicios especializados para tu hogar o empresa. Rápidos, confiables, al alcance de un mensaje." />
+
+    <!-- ═══════════════════════════════════════════════════════
+         CANONICAL
+    ═══════════════════════════════════════════════════════ -->
+    <link rel="canonical" href="https://servaservicios.com.mx/" />
+
+    <!-- ═══════════════════════════════════════════════════════
+         GEO / LOCAL SEO
+    ═══════════════════════════════════════════════════════ -->
+    <meta name="geo.region" content="MX-NL" />
+    <meta name="geo.placename" content="Monterrey, Nuevo León, México" />
+    <meta name="geo.position" content="25.6866;-100.3161" />
+    <meta name="ICBM" content="25.6866, -100.3161" />
+    <meta name="language" content="Spanish" />
+    <meta name="content-language" content="es-MX" />
+
+    <!-- ═══════════════════════════════════════════════════════
+         OPEN GRAPH
+    ═══════════════════════════════════════════════════════ -->
     <meta property="og:type" content="website" />
-    <title>SERVA — Limpieza y Mantenimiento en Monterrey</title>
-    <!-- Preload LCP hero + above-fold logo to unblock first paint -->
+    <meta property="og:site_name" content="SERVA Servicios" />
+    <meta property="og:url" content="https://servaservicios.com.mx/" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:title" content="SERVA Servicios | Limpieza y Mantenimiento en Monterrey, NL" />
+    <meta property="og:description" content="Empresa de limpieza profesional y mantenimiento integral en Monterrey. Residencial, comercial, industrial. Aire acondicionado, plomería, fumigación y más. Cotiza gratis por WhatsApp." />
+    <meta property="og:image" content="https://servaservicios.com.mx/images/Personal.png" />
+    <meta property="og:image:alt" content="Equipo profesional de SERVA Servicios en Monterrey" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- ═══════════════════════════════════════════════════════
+         TWITTER CARDS
+    ═══════════════════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SERVA Servicios | Limpieza y Mantenimiento en Monterrey, NL" />
+    <meta name="twitter:description" content="Empresa de limpieza profesional y mantenimiento integral en Monterrey. Residencial, comercial, industrial. Cotiza gratis por WhatsApp." />
+    <meta name="twitter:image" content="https://servaservicios.com.mx/images/Personal.png" />
+    <meta name="twitter:image:alt" content="Equipo profesional de SERVA Servicios en Monterrey" />
+
+    <!-- ═══════════════════════════════════════════════════════
+         PERFORMANCE — Preload LCP + above-fold assets
+    ═══════════════════════════════════════════════════════ -->
     <link rel="preload" as="image" href="/images/Personal.png" fetchpriority="high" />
     <link rel="preload" as="image" href="/images/Logo%20Verde.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+
+    <!-- ═══════════════════════════════════════════════════════
+         STRUCTURED DATA — JSON-LD
+    ═══════════════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+
+        {
+          "@type": "Organization",
+          "@id": "https://servaservicios.com.mx/#organization",
+          "name": "SERVA Servicios",
+          "url": "https://servaservicios.com.mx",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://servaservicios.com.mx/images/Logo%20Verde.png",
+            "width": 160,
+            "height": 80
+          },
+          "image": "https://servaservicios.com.mx/images/Personal.png",
+          "telephone": "+528119158919",
+          "email": "contacto@servaservicios.com.mx",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Monterrey",
+            "addressRegion": "Nuevo León",
+            "addressCountry": "MX"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+528119158919",
+            "contactType": "customer service",
+            "areaServed": "MX-NL",
+            "availableLanguage": "Spanish"
+          }
+        },
+
+        {
+          "@type": ["LocalBusiness", "CleaningService", "HomeAndConstructionBusiness"],
+          "@id": "https://servaservicios.com.mx/#localbusiness",
+          "name": "SERVA Servicios",
+          "description": "Empresa de limpieza profesional y mantenimiento integral para hogares, oficinas, comercios e industria en el Área Metropolitana de Monterrey, Nuevo León, México.",
+          "url": "https://servaservicios.com.mx",
+          "telephone": "+528119158919",
+          "email": "contacto@servaservicios.com.mx",
+          "image": "https://servaservicios.com.mx/images/Personal.png",
+          "logo": "https://servaservicios.com.mx/images/Logo%20Verde.png",
+          "priceRange": "$$",
+          "currenciesAccepted": "MXN",
+          "paymentAccepted": "Efectivo, Transferencia bancaria, Tarjeta de crédito",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Monterrey",
+            "addressRegion": "Nuevo León",
+            "addressCountry": "MX"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 25.6866,
+            "longitude": -100.3161
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Monterrey" },
+            { "@type": "City", "name": "San Pedro Garza García" },
+            { "@type": "City", "name": "Santa Catarina" },
+            { "@type": "City", "name": "Apodaca" },
+            { "@type": "City", "name": "General Escobedo" },
+            { "@type": "City", "name": "Guadalupe" },
+            { "@type": "City", "name": "San Nicolás de los Garza" }
+          ],
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+              "opens": "08:00",
+              "closes": "19:00"
+            }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servicios de Limpieza y Mantenimiento en Monterrey",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Limpieza General (Personal Fijo)",
+                  "description": "Servicio de limpieza general con personal fijo para hogares, oficinas y comercios en Monterrey y Área Metropolitana."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Limpieza Profunda y Fina",
+                  "description": "Limpieza profunda y fina para residencias y negocios en Monterrey. Incluye detalles en superficies, muebles y áreas de difícil acceso."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Limpieza Post-Construcción",
+                  "description": "Limpieza profesional post-construcción en Monterrey. Eliminación de polvo de obra, residuos de materiales y acabados."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Limpieza de Muebles y Alfombras",
+                  "description": "Lavado y limpieza profesional de muebles, alfombras y tapetes en Monterrey."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Limpieza de Ventanas y Fachadas",
+                  "description": "Limpieza de ventanas y fachadas para edificios, oficinas y residencias en Monterrey."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Limpieza de Pisos",
+                  "description": "Lavado, pulido y mantenimiento de pisos en Monterrey. Aplica para todo tipo de superficies."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Limpieza de Fosas Sépticas y Cisternas",
+                  "description": "Limpieza y desinfección de fosas sépticas y cisternas en el Área Metropolitana de Monterrey."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Limpieza de Trampas de Grasa",
+                  "description": "Limpieza de trampas de grasa con manifiesto de disposición ante Agua y Drenaje de Monterrey."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Mantenimiento de Aire Acondicionado",
+                  "description": "Mantenimiento preventivo y correctivo de sistemas de aire acondicionado central y minisplit en Monterrey."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Plomería en Monterrey",
+                  "description": "Diagnósticos, corrección de fugas, desazolves y cambio de llaves y válvulas en Monterrey y Área Metropolitana."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Fumigación y Control de Plagas en Monterrey",
+                  "description": "Fumigación certificada para control de insectos rastreros, cucarachas, termitas y roedores en Monterrey. Incluye certificado ante la Secretaría de Salud."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Instalaciones y Mantenimiento General",
+                  "description": "Mantenimiento general, reparaciones, herrajes, armado de muebles e instalación de TVs en Monterrey."
+                }
+              }
+            ]
+          }
+        },
+
+        {
+          "@type": "WebSite",
+          "@id": "https://servaservicios.com.mx/#website",
+          "url": "https://servaservicios.com.mx",
+          "name": "SERVA Servicios",
+          "description": "Empresa de limpieza profesional y mantenimiento integral en Monterrey, Nuevo León, México.",
+          "inLanguage": "es-MX",
+          "publisher": { "@id": "https://servaservicios.com.mx/#organization" }
+        },
+
+        {
+          "@type": "WebPage",
+          "@id": "https://servaservicios.com.mx/#webpage",
+          "url": "https://servaservicios.com.mx/",
+          "name": "SERVA Servicios | Limpieza y Mantenimiento en Monterrey, NL",
+          "description": "Empresa de limpieza profesional y mantenimiento integral en Monterrey, NL. Residencial, comercial e industrial. +2,000 servicios completados.",
+          "inLanguage": "es-MX",
+          "isPartOf": { "@id": "https://servaservicios.com.mx/#website" },
+          "about": { "@id": "https://servaservicios.com.mx/#localbusiness" },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Inicio",
+                "item": "https://servaservicios.com.mx/"
+              }
+            ]
+          }
+        },
+
+        {
+          "@type": "FAQPage",
+          "@id": "https://servaservicios.com.mx/#faqpage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿En qué zonas de Monterrey trabajan?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Cubrimos toda la Zona Metropolitana de Monterrey: San Pedro, Santa Catarina, Apodaca, Escobedo, Guadalupe, San Nicolás y el municipio de Monterrey."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuánto tiempo tarda una cotización?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Respondemos en menos de 2 horas en días hábiles. Solo escríbenos por WhatsApp con una descripción del espacio y el servicio que necesitas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Trabajan en fines de semana?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, estamos disponibles de lunes a sábado. Para proyectos urgentes también coordinamos domingos y días festivos con previo aviso."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Los productos que usan son seguros?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Usamos productos certificados, biodegradables y seguros para personas, mascotas y superficies delicadas. Para servicios industriales usamos los insumos específicos al tipo de contaminante."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Entregan certificados y manifiestos al finalizar los servicios?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Los servicios de fumigación concluyen con certificado oficial ante la Secretaría de Salud; los de limpieza y desazolve de trampas de grasa incluyen manifiesto de disposición ante Agua y Drenaje de Monterrey. Toda la documentación se entrega al cierre del servicio, sin gestiones adicionales de tu parte."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Tienen facturas o comprobantes fiscales?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, emitimos CFDI para personas físicas y morales. Solicítalo al momento de contratar el servicio."
+              }
+            }
+          ]
+        }
+
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

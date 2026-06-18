@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Bloquear rutas innecesarias
+Disallow: /dist/
+Disallow: /*.json$
+
+# Sitemap
+Sitemap: https://servaservicios.com.mx/sitemap.xml

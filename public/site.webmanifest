@@ -1,12 +1,26 @@
 {
-  "name": "SERVA — Limpieza y Mantenimiento",
+  "name": "SERVA Servicios | Limpieza y Mantenimiento en Monterrey",
   "short_name": "SERVA",
-  "description": "Limpieza profesional y mantenimiento integral en Monterrey",
+  "description": "Empresa de limpieza profesional y mantenimiento integral para hogares y empresas en Monterrey y Área Metropolitana de Nuevo León, México.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "theme_color": "#2ecc70",
-  "background_color": "#ffffff",
+  "background_color": "#0b0f0c",
+  "lang": "es-MX",
+  "categories": ["business", "utilities"],
   "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
     {
       "src": "/icon-192x192.png",
       "sizes": "192x192",
