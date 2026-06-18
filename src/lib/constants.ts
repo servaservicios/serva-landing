@@ -85,7 +85,7 @@ export const STATS: Array<
 > = [
   { value: 2000, suffix: '+', label: 'Servicios completados' },
   { value: 60,   suffix: '+', label: 'Servicios especializados' },
-  { display: '< 2 horas', label: 'Respuesta en días hábiles' },
+  { display: '< 2 horas', label: 'Tiempo de respuesta' },
 ]
 
 export const PROCESS_STEPS = [
